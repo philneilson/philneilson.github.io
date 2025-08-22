@@ -52,3 +52,15 @@ plugins:
 #   - vendor/ruby/
 
 # Triggering build
+
+contact_channels:
+  email: "philip.s.neilson@gmail.com"
+  linkedin: "https://www.linkedin.com/in/philipsneilson"
+  github: "https://github.com/philneilson"
+  goodreads: "https://www.goodreads.com/user/show/128422063-phil"
+
+# Adding Projects as another collection
+collections:
+  projects:
+    output: true
+    permalink: /projects/:path/
