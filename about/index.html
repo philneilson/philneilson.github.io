@@ -35,59 +35,47 @@
 
   <body class="bg-neutral-50 text-neutral-900 dark:bg-neutral-950 dark:text-neutral-200">
     <nav class="absolute top-0 left-0 right-0 flex w-full flex-wrap items-center justify-between py-4">
-  <div class="flex w-full flex-wrap items-center justify-between px-5 md:px-0">
+  <div class="flex w-full flex-wrap items-center justify-between px-5">
     <a class="flex" href="/" aria-label="Phil Neilson - Librarian">
       <img src="/assets/images/logo.png" alt="webpage logo" class="block h-8 w-auto">
-      <p class="pl-4 hidden md:block text-lg font-bold">Phil Neilson <span class="text-mulish text-sm font-normal">~/about/</span></p>
+      <p class="pl-4 hidden md:block text-lg font-bold">Phil Neilson <span
+          class="text-mulish text-sm font-normal">~/about/</span>
+      </p>
     </a>
 
-    <div class="md:hidden">
-      <button id="nav-toggle" class="flex items-center p-3 border rounded-full border-neutral-400 dark:border-neutral-500 hover:text-neutral-500 hover:border-neutral-500">
-        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-          <title>Menu</title>
-          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
-        </svg>
-      </button>
-    </div>
-
-    <div id="nav-content" class="w-full md:flex md:items-center md:w-auto hidden">
-      <div class="flex flex-col md:flex-row divide-y md:divide-y-0">
-        
-        
-        
-        
-        <div>
-          <a class="block px-4 py-2 hover:underline font-bold" href="/about/">About</a>
-        </div>
-        
-        
-        
-        <div>
-          <a class="block px-4 py-2 hover:underline " href="/blog/">Blog</a>
-        </div>
-        
-        
-        
-        
-        
-        <div>
-          <a class="block px-4 py-2 hover:underline " href="/projects/">Projects</a>
-        </div>
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-      </div>
+    <div class="flex divide-x">
+      
+      
+      
+      
+      <div><a class="px-4 hover:underline font-bold"
+          href="/about/">About</a></div>
+      
+      
+      
+      <div><a class="px-4 hover:underline "
+          href="/blog/">Blog</a></div>
+      
+      
+      
+      
+      
+      <div><a class="px-4 hover:underline "
+          href="/projects/">Projects</a></div>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
 
       <div class="theme-switcher">
         <button id="theme-toggle" class="px-4" aria-label="Toggle theme">
@@ -110,16 +98,8 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      const navToggle = document.getElementById('nav-toggle');
-      const navContent = document.getElementById('nav-content');
       const currentLangButton = document.querySelector('.current-language');
       const dropdownContent = document.querySelector('.dropdown-content');
-
-      if (navToggle && navContent) {
-        navToggle.addEventListener('click', function () {
-          navContent.classList.toggle('hidden');
-        });
-      }
 
       if (currentLangButton && dropdownContent) {
         currentLangButton.addEventListener('click', function () {
