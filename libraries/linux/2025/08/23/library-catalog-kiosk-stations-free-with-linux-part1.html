@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="/assets/css/dist-style.css" rel="stylesheet" />
     <link href="/assets/css/fonts.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/assets/css/custom.css" />
 
     <script src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js"></script>
     <script>
@@ -12,21 +13,24 @@
     </script>
 
     <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Welcome to Jekyll! | Phil Neilson</title>
+<title>Library Catalog Kiosk Stations, Free with Linux Mint (Part 1) | Phil Neilson</title>
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="Welcome to Jekyll!" />
+<meta property="og:title" content="Library Catalog Kiosk Stations, Free with Linux Mint (Part 1)" />
+<meta name="author" content="Phil Neilson" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated." />
-<meta property="og:description" content="You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated." />
-<link rel="canonical" href="https://philneilson.online/jekyll/update/2025/08/20/welcome-to-jekyll.html" />
-<meta property="og:url" content="https://philneilson.online/jekyll/update/2025/08/20/welcome-to-jekyll.html" />
+<meta name="description" content="In the library where I work, we recently had to find a new solution for our catalog computer stations. For the past few years, we had been running our catalog on computers with the excellent open-source, Linux-based Porteus Kiosk." />
+<meta property="og:description" content="In the library where I work, we recently had to find a new solution for our catalog computer stations. For the past few years, we had been running our catalog on computers with the excellent open-source, Linux-based Porteus Kiosk." />
+<link rel="canonical" href="https://philneilson.online/libraries/linux/2025/08/23/library-catalog-kiosk-stations-free-with-linux-part1.html" />
+<meta property="og:url" content="https://philneilson.online/libraries/linux/2025/08/23/library-catalog-kiosk-stations-free-with-linux-part1.html" />
 <meta property="og:site_name" content="Phil Neilson" />
+<meta property="og:image" content="https://philneilson.online/assets/images/posts/catalog.jpg" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2025-08-20T14:29:16+00:00" />
-<meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Welcome to Jekyll!" />
+<meta property="article:published_time" content="2025-08-23T18:03:16+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://philneilson.online/assets/images/posts/catalog.jpg" />
+<meta property="twitter:title" content="Library Catalog Kiosk Stations, Free with Linux Mint (Part 1)" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-08-20T14:29:16+00:00","datePublished":"2025-08-20T14:29:16+00:00","description":"You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.","headline":"Welcome to Jekyll!","mainEntityOfPage":{"@type":"WebPage","@id":"https://philneilson.online/jekyll/update/2025/08/20/welcome-to-jekyll.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://philneilson.online/assets/images/logo.avif"}},"url":"https://philneilson.online/jekyll/update/2025/08/20/welcome-to-jekyll.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Phil Neilson"},"dateModified":"2025-08-23T18:03:16+00:00","datePublished":"2025-08-23T18:03:16+00:00","description":"In the library where I work, we recently had to find a new solution for our catalog computer stations. For the past few years, we had been running our catalog on computers with the excellent open-source, Linux-based Porteus Kiosk.","headline":"Library Catalog Kiosk Stations, Free with Linux Mint (Part 1)","image":"https://philneilson.online/assets/images/posts/catalog.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"https://philneilson.online/libraries/linux/2025/08/23/library-catalog-kiosk-stations-free-with-linux-part1.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://philneilson.online/assets/images/logo.avif"},"name":"Phil Neilson"},"url":"https://philneilson.online/libraries/linux/2025/08/23/library-catalog-kiosk-stations-free-with-linux-part1.html"}</script>
 <!-- End Jekyll SEO tag -->
 
     <link rel="icon" type="image/png" href="/assets/images/favicon.png">
@@ -40,7 +44,7 @@
     <a class="flex" href="/" aria-label="Phil Neilson - Librarian">
       <img src="/assets/images/logo.png" alt="webpage logo" class="block h-8 w-auto">
       <p class="pl-4 hidden md:block text-lg font-bold">Phil Neilson <span
-          class="text-mulish text-sm font-normal">~/jekyll/update/2025/08/20/welcome-to-jekyll.html</span>
+          class="text-mulish text-sm font-normal">~/libraries/linux/2025/08/23/library-catalog-kiosk-stations-free-with-linux-part1.html</span>
       </p>
     </a>
 
@@ -121,29 +125,29 @@
 <div class="container mx-auto">
   <div id="post" class="prose md:prose-lg dark:prose-invert prose-img:rounded-lg max-w-[75ch] mx-auto pb-10 pt-20 lg:pt-[90px] lg:pb-20">
     <div class="pb-4" data-motion="fadeInRight">
-      <a href="https://philneilson.online/category/jekyll"
+      <a href="https://philneilson.online/category/libraries"
         class="no-underline font-mulish text-sm hover:underline text-neutral-700 dark:text-neutral-300">
-        JEKYLL
+        LIBRARIES
       </a>
     </div>
 
-    <h1 class="text-left text-2xl font-bold md:text-5xl text-neutral-900 dark:text-neutral-100" data-motion="fadeInRight">Welcome to Jekyll!</h1>
+    <h1 class="text-left text-2xl font-bold md:text-5xl text-neutral-900 dark:text-neutral-100" data-motion="fadeInRight">Library Catalog Kiosk Stations, Free with Linux Mint (Part 1)</h1>
 
     <div data-motion="fadeInLeft" data-motion-delay="0.4" data-motion-duration="0.4" class="flex flex-col md:flex-row text-sm font-mulish justify-between items-center">
       <div class="flex">
-        <p></p>
+        <p>Phil Neilson</p>
         <p class="px-2">•</p>
-        <p>20 August 2025</p>
+        <p>23 August 2025</p>
         <p class="px-2">•</p>
         <p>
           
-           1 min  </p>
+           3 mins  </p>
       </div>
       <div>
         <div class="sharing-buttons flex  flex-wrap gap-1 justify-center ">
   <a class="border-2 duration-200 ease inline-flex items-center mb-1 mr-1 transition p-2 rounded-full text-white border-slate-600 bg-slate-600 hover:bg-slate-700 hover:border-slate-700"
     target="_blank" rel="noopener"
-    href="https://facebook.com/sharer/sharer.php?u=https://philneilson.online/jekyll/update/2025/08/20/welcome-to-jekyll.html"
+    href="https://facebook.com/sharer/sharer.php?u=https://philneilson.online/libraries/linux/2025/08/23/library-catalog-kiosk-stations-free-with-linux-part1.html"
     aria-label="Share on Facebook">
     <svg aria-hidden="true" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
       class="w-5 h-5">
@@ -155,7 +159,7 @@
   </a>
   <a class="border-2 duration-200 ease inline-flex items-center mb-1 mr-1 transition p-2 rounded-full text-white border-slate-600 bg-slate-600 hover:bg-slate-700 hover:border-slate-700"
     target="_blank" rel="noopener"
-    href="https://twitter.com/intent/tweet?url=https://philneilson.online/jekyll/update/2025/08/20/welcome-to-jekyll.html&text=Welcome to Jekyll!"
+    href="https://twitter.com/intent/tweet?url=https://philneilson.online/libraries/linux/2025/08/23/library-catalog-kiosk-stations-free-with-linux-part1.html&text=Library Catalog Kiosk Stations, Free with Linux Mint (Part 1)"
     aria-label="Share on Twitter">
     <svg aria-hidden="true" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
       class="w-5 h-5">
@@ -167,7 +171,7 @@
   </a>
   <a class="border-2 duration-200 ease inline-flex items-center mb-1 mr-1 transition p-2 rounded-full text-white border-slate-600 bg-slate-600 hover:bg-slate-700 hover:border-slate-700"
     target="_blank" rel="noopener"
-    href="https://www.linkedin.com/shareArticle?mini=true&url=https://philneilson.online/jekyll/update/2025/08/20/welcome-to-jekyll.html&title=Welcome to Jekyll!&summary=Welcome to Jekyll!&source=https://philneilson.online"
+    href="https://www.linkedin.com/shareArticle?mini=true&url=https://philneilson.online/libraries/linux/2025/08/23/library-catalog-kiosk-stations-free-with-linux-part1.html&title=Library Catalog Kiosk Stations, Free with Linux Mint (Part 1)&summary=Library Catalog Kiosk Stations, Free with Linux Mint (Part 1)&source=https://philneilson.online"
     aria-label="Share on Linkedin">
     <svg aria-hidden="true" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
       class="w-5 h-5">
@@ -179,7 +183,7 @@
   </a>
   <a class="border-2 duration-200 ease inline-flex items-center mb-1 mr-1 transition p-2 rounded-full text-white border-slate-600 bg-slate-600 hover:bg-slate-700 hover:border-slate-700"
     target="_blank" rel="noopener"
-    href="https://pinterest.com/pin/create/button/?url=https://philneilson.online/jekyll/update/2025/08/20/welcome-to-jekyll.html&media=https://philneilson.online&description=Welcome to Jekyll!"
+    href="https://pinterest.com/pin/create/button/?url=https://philneilson.online/libraries/linux/2025/08/23/library-catalog-kiosk-stations-free-with-linux-part1.html&media=https://philneilson.online&description=Library Catalog Kiosk Stations, Free with Linux Mint (Part 1)"
     aria-label="Share on Pinterest" draggable="false">
     <svg aria-hidden="true" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
       class="w-5 h-5">
@@ -191,7 +195,7 @@
   </a>
   <a class="border-2 duration-200 ease inline-flex items-center mb-1 mr-1 transition p-2 rounded-full text-white border-slate-600 bg-slate-600 hover:bg-slate-700 hover:border-slate-700"
     target="_blank" rel="noopener"
-    href="https://reddit.com/submit/?url=https://philneilson.online/jekyll/update/2025/08/20/welcome-to-jekyll.html&resubmit=true&title=Welcome to Jekyll!"
+    href="https://reddit.com/submit/?url=https://philneilson.online/libraries/linux/2025/08/23/library-catalog-kiosk-stations-free-with-linux-part1.html&resubmit=true&title=Library Catalog Kiosk Stations, Free with Linux Mint (Part 1)"
     aria-label="Share on Reddit" draggable="false">
     <svg aria-hidden="true" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
       class="w-5 h-5">
@@ -203,7 +207,7 @@
   </a>
   <a class="border-2 duration-200 ease inline-flex items-center mb-1 mr-1 transition p-2 rounded-full text-white border-slate-600 bg-slate-600 hover:bg-slate-700 hover:border-slate-700"
     target="_blank" rel="noopener"
-    href="https://wa.me/?text=Welcome%20to%20Jekyll!%20https://philneilson.online"
+    href="https://wa.me/?text=Library%20Catalog%20Kiosk%20Stations,%20Free%20with%20Linux%20Mint%20(Part%201)%20https://philneilson.online"
     aria-label="Share on Whatsapp" draggable="false">
     <svg aria-hidden="true" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
       class="w-5 h-5">
@@ -215,7 +219,7 @@
   </a>
   <a class="border-2 duration-200 ease inline-flex items-center mb-1 mr-1 transition p-2 rounded-full text-white border-slate-600 bg-slate-600 hover:bg-slate-700 hover:border-slate-700"
     target="_blank" rel="noopener"
-    href="https://telegram.me/share/url?text=Welcome%20to%20Jekyll!&url=https://philneilson.online/jekyll/update/2025/08/20/welcome-to-jekyll.html"
+    href="https://telegram.me/share/url?text=Library%20Catalog%20Kiosk%20Stations,%20Free%20with%20Linux%20Mint%20(Part%201)&url=https://philneilson.online/libraries/linux/2025/08/23/library-catalog-kiosk-stations-free-with-linux-part1.html"
     aria-label="Share on Telegram" draggable="false">
     <svg aria-hidden="true" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
       class="w-5 h-5">
@@ -227,7 +231,7 @@
   </a>
   <a class="border-2 duration-200 ease inline-flex items-center mb-1 mr-1 transition p-2 rounded-full text-white border-slate-600 bg-slate-600 hover:bg-slate-700 hover:border-slate-700"
     target="_blank" rel="noopener"
-    href="mailto:?subject=Welcome%20to%20Jekyll!&body=https://philneilson.online/jekyll/update/2025/08/20/welcome-to-jekyll.html"
+    href="mailto:?subject=Library%20Catalog%20Kiosk%20Stations,%20Free%20with%20Linux%20Mint%20(Part%201)&body=https://philneilson.online/libraries/linux/2025/08/23/library-catalog-kiosk-stations-free-with-linux-part1.html"
     aria-label="Share by Email" draggable="false">
     <svg aria-hidden="true" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
       class="w-5 h-5">
@@ -243,26 +247,42 @@
     </div>
 
     
+      <img data-motion="fadeInUp" data-motion-onscroll="false" data-motion-delay="0.8" data-motion-duration="0.2" class="w-full" src="/assets/images/posts/catalog.jpg" alt="Library Catalog Kiosk Stations, Free with Linux Mint (Part 1)">
+    
 
     <div data-motion="fadeInUp" data-motion-onscroll="false" data-motion-delay="1" data-motion-duration="0.2" class="my-6">
-      <p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
+      <p>In the library where I work, we recently had to find a new solution for our catalog computer stations. For the past few years, we had been running our catalog on computers with the excellent open-source, <strong>Linux-based <a href="https://porteus-kiosk.org/index.html">Porteus Kiosk</a></strong>.</p>
 
-<p>Jekyll requires blog post files to be named according to the following format:</p>
+<p>Prior to version 6.0.0, you could download Porteus, flash it to a USB, boot to the USB on your catalog computer and configure the settings you wanted, then install the image to the catalog computer’s hard drive, all for free. There was an optional “automatic updates and support” option that you could pay for, but you could just not check that box and it would run for free. We had it running all our catalog stations.</p>
 
-<p><code class="language-plaintext highlighter-rouge">YEAR-MONTH-DAY-title.MARKUP</code></p>
+<p>With version 6.0.0 and forward, the “automatic updates and support” feature is mandatory; in other words, Porteus Kiosk is no longer free to use. One of our computers stopped booting correctly for some reason, and when I went to reinstall, I discovered this. (I actually tried installing a pre-6.0.0 version, but it wouldn’t let me get through the startup process because it said that the version I was using, which was the latest version prior to 6.0.0 I could find, was no longer supported.) The pricing per year is not egregious, but if you have worked for municipal governments before, then you know that it can be hard to convince your purchasing department to pay for new and seemingly obscure things. I’m sure we could have made it work, and if you work in a library and are looking for a good catalog station solution, you should still definitely look at Porteus Kiosk.</p>
 
-<p>Where <code class="language-plaintext highlighter-rouge">YEAR</code> is a four-digit number, <code class="language-plaintext highlighter-rouge">MONTH</code> and <code class="language-plaintext highlighter-rouge">DAY</code> are both two-digit numbers, and <code class="language-plaintext highlighter-rouge">MARKUP</code> is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.</p>
+<hr />
 
-<p>Jekyll also offers powerful support for code snippets:</p>
+<h3 id="the-free-alternative">The Free Alternative</h3>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
-  <span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
-<span class="k">end</span>
-<span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
-<span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span></code></pre></figure>
+<p>However, if you’re like me and want to save yourself some red tape and/or stretch your budget a bit further, you can create a catalog kiosk station that functions very similarly to Porteus Kiosk, for free.</p>
 
-<p>Check out the <a href="https://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>
+<p>In this series of blog posts, I will share the process I went through to install <strong>Linux Mint</strong> on a catalog computer station and then added a few utilities and a custom script to make the computer function automatically as a kiosk station.</p>
 
+<p>Here were the main requirements that I was after in my setup:</p>
+
+<ul>
+  <li>The catalog station should boot straight into the library catalog homepage in a web browser upon hitting the computer’s power button</li>
+  <li>Likewise, the catalog station should shut down when the power button is pressed</li>
+  <li>The catalog station should have the address and navbar removed to limit the computer to the use of the catalog and a few peripheral pages only</li>
+  <li>For the same reason, the browser should be limited to a set of whitelisted URLs</li>
+  <li>The catalog user should be able to still navigate or at least start over, despite the lack of a navbar</li>
+  <li>If a catalog user leaves the catalog station on a page other than the homepage, the station will refresh back to the homepage after around 30 seconds of inactivity so the next user can start from the beginning</li>
+</ul>
+
+<hr />
+
+<h3 id="getting-started">Getting Started</h3>
+
+<p>I began this process with the very helpful tutorial video <strong><a href="https://www.youtube.com/watch?v=XC0JonvTTOk">How to turn a LINUX MINT PC into a Web KIOSK</a></strong> and its <strong><a href="https://www.youtube.com/watch?v=Tp6QBJcXUIo">Part 2</a></strong>, so thank you to TECHMIMIC for these excellent tutorials. However, after completing the instructions I still hadn’t gotten some of the features I listed above (URL whitelist, the ability to navigate a bit or at least not get stuck, reset upon inactivity), so I kept going.  The rest of the instructions are pieced together from blog and forum posts (my usual way of learning Linux) and, eventually some AI help (not my usual way, but it was helpful).</p>
+
+<p>These instructions are written by a librarian for other librarians, so they are by design not super technical and might overexplain things a bit. Also, there are certainly more elegant and lightweight ways to achieve all this (Porteus Kiosk is proof), but my hope is that this method will be replicable for a majority of those who give it a try.</p>
 
     </div>
 
@@ -273,7 +293,7 @@
       <div class="sharing-buttons flex  flex-wrap gap-1 justify-center ">
   <a class="border-2 duration-200 ease inline-flex items-center mb-1 mr-1 transition p-2 rounded-full text-white border-slate-600 bg-slate-600 hover:bg-slate-700 hover:border-slate-700"
     target="_blank" rel="noopener"
-    href="https://facebook.com/sharer/sharer.php?u=https://philneilson.online/jekyll/update/2025/08/20/welcome-to-jekyll.html"
+    href="https://facebook.com/sharer/sharer.php?u=https://philneilson.online/libraries/linux/2025/08/23/library-catalog-kiosk-stations-free-with-linux-part1.html"
     aria-label="Share on Facebook">
     <svg aria-hidden="true" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
       class="w-5 h-5">
@@ -285,7 +305,7 @@
   </a>
   <a class="border-2 duration-200 ease inline-flex items-center mb-1 mr-1 transition p-2 rounded-full text-white border-slate-600 bg-slate-600 hover:bg-slate-700 hover:border-slate-700"
     target="_blank" rel="noopener"
-    href="https://twitter.com/intent/tweet?url=https://philneilson.online/jekyll/update/2025/08/20/welcome-to-jekyll.html&text=Welcome to Jekyll!"
+    href="https://twitter.com/intent/tweet?url=https://philneilson.online/libraries/linux/2025/08/23/library-catalog-kiosk-stations-free-with-linux-part1.html&text=Library Catalog Kiosk Stations, Free with Linux Mint (Part 1)"
     aria-label="Share on Twitter">
     <svg aria-hidden="true" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
       class="w-5 h-5">
@@ -297,7 +317,7 @@
   </a>
   <a class="border-2 duration-200 ease inline-flex items-center mb-1 mr-1 transition p-2 rounded-full text-white border-slate-600 bg-slate-600 hover:bg-slate-700 hover:border-slate-700"
     target="_blank" rel="noopener"
-    href="https://www.linkedin.com/shareArticle?mini=true&url=https://philneilson.online/jekyll/update/2025/08/20/welcome-to-jekyll.html&title=Welcome to Jekyll!&summary=Welcome to Jekyll!&source=https://philneilson.online"
+    href="https://www.linkedin.com/shareArticle?mini=true&url=https://philneilson.online/libraries/linux/2025/08/23/library-catalog-kiosk-stations-free-with-linux-part1.html&title=Library Catalog Kiosk Stations, Free with Linux Mint (Part 1)&summary=Library Catalog Kiosk Stations, Free with Linux Mint (Part 1)&source=https://philneilson.online"
     aria-label="Share on Linkedin">
     <svg aria-hidden="true" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
       class="w-5 h-5">
@@ -309,7 +329,7 @@
   </a>
   <a class="border-2 duration-200 ease inline-flex items-center mb-1 mr-1 transition p-2 rounded-full text-white border-slate-600 bg-slate-600 hover:bg-slate-700 hover:border-slate-700"
     target="_blank" rel="noopener"
-    href="https://pinterest.com/pin/create/button/?url=https://philneilson.online/jekyll/update/2025/08/20/welcome-to-jekyll.html&media=https://philneilson.online&description=Welcome to Jekyll!"
+    href="https://pinterest.com/pin/create/button/?url=https://philneilson.online/libraries/linux/2025/08/23/library-catalog-kiosk-stations-free-with-linux-part1.html&media=https://philneilson.online&description=Library Catalog Kiosk Stations, Free with Linux Mint (Part 1)"
     aria-label="Share on Pinterest" draggable="false">
     <svg aria-hidden="true" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
       class="w-5 h-5">
@@ -321,7 +341,7 @@
   </a>
   <a class="border-2 duration-200 ease inline-flex items-center mb-1 mr-1 transition p-2 rounded-full text-white border-slate-600 bg-slate-600 hover:bg-slate-700 hover:border-slate-700"
     target="_blank" rel="noopener"
-    href="https://reddit.com/submit/?url=https://philneilson.online/jekyll/update/2025/08/20/welcome-to-jekyll.html&resubmit=true&title=Welcome to Jekyll!"
+    href="https://reddit.com/submit/?url=https://philneilson.online/libraries/linux/2025/08/23/library-catalog-kiosk-stations-free-with-linux-part1.html&resubmit=true&title=Library Catalog Kiosk Stations, Free with Linux Mint (Part 1)"
     aria-label="Share on Reddit" draggable="false">
     <svg aria-hidden="true" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
       class="w-5 h-5">
@@ -333,7 +353,7 @@
   </a>
   <a class="border-2 duration-200 ease inline-flex items-center mb-1 mr-1 transition p-2 rounded-full text-white border-slate-600 bg-slate-600 hover:bg-slate-700 hover:border-slate-700"
     target="_blank" rel="noopener"
-    href="https://wa.me/?text=Welcome%20to%20Jekyll!%20https://philneilson.online"
+    href="https://wa.me/?text=Library%20Catalog%20Kiosk%20Stations,%20Free%20with%20Linux%20Mint%20(Part%201)%20https://philneilson.online"
     aria-label="Share on Whatsapp" draggable="false">
     <svg aria-hidden="true" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
       class="w-5 h-5">
@@ -345,7 +365,7 @@
   </a>
   <a class="border-2 duration-200 ease inline-flex items-center mb-1 mr-1 transition p-2 rounded-full text-white border-slate-600 bg-slate-600 hover:bg-slate-700 hover:border-slate-700"
     target="_blank" rel="noopener"
-    href="https://telegram.me/share/url?text=Welcome%20to%20Jekyll!&url=https://philneilson.online/jekyll/update/2025/08/20/welcome-to-jekyll.html"
+    href="https://telegram.me/share/url?text=Library%20Catalog%20Kiosk%20Stations,%20Free%20with%20Linux%20Mint%20(Part%201)&url=https://philneilson.online/libraries/linux/2025/08/23/library-catalog-kiosk-stations-free-with-linux-part1.html"
     aria-label="Share on Telegram" draggable="false">
     <svg aria-hidden="true" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
       class="w-5 h-5">
@@ -357,7 +377,7 @@
   </a>
   <a class="border-2 duration-200 ease inline-flex items-center mb-1 mr-1 transition p-2 rounded-full text-white border-slate-600 bg-slate-600 hover:bg-slate-700 hover:border-slate-700"
     target="_blank" rel="noopener"
-    href="mailto:?subject=Welcome%20to%20Jekyll!&body=https://philneilson.online/jekyll/update/2025/08/20/welcome-to-jekyll.html"
+    href="mailto:?subject=Library%20Catalog%20Kiosk%20Stations,%20Free%20with%20Linux%20Mint%20(Part%201)&body=https://philneilson.online/libraries/linux/2025/08/23/library-catalog-kiosk-stations-free-with-linux-part1.html"
     aria-label="Share by Email" draggable="false">
     <svg aria-hidden="true" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
       class="w-5 h-5">
