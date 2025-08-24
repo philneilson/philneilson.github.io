@@ -35,50 +35,50 @@
   </head>
 
   <body class="bg-neutral-50 text-neutral-900 dark:bg-neutral-950 dark:text-neutral-200">
-    <nav class="absolute top-0 left-0 right-0 flex w-full flex-wrap items-center justify-between py-4">
-  <div class="flex w-full flex-wrap items-center justify-between px-5">
-    <a class="flex" href="/" aria-label="Phil Neilson - Librarian">
-      <img src="/assets/images/logo.png" alt="webpage logo" class="block h-8 w-auto">
-      <p class="pl-4 hidden md:block text-lg font-bold">Phil Neilson <span
-          class="text-mulish text-sm font-normal">~/projects/</span>
-      </p>
-    </a>
+    <nav class="absolute top-0 left-0 right-0 z-50 flex w-full flex-wrap items-center justify-between py-4 px-5">
+  <a class="flex" href="/" aria-label="Phil Neilson - Librarian">
+    <img src="/assets/images/logo.png" alt="webpage logo" class="block h-8 w-auto">
+    <p class="pl-4 hidden md:block text-lg font-bold">Phil Neilson <span class="text-mulish text-sm font-normal">~/projects/</span></p>
+  </a>
 
-    <!-- Desktop Navigation (hidden on mobile) -->
-    <div class="desktop-nav divide-x">
+  <div class="flex flex-wrap items-center space-x-4">
+    <div class="hidden md:flex flex-wrap divide-x items-center">
       
       
       
       
-      <div><a class="px-4 hover:underline "
-          href="/about/">About</a></div>
+      <div>
+        <a class="px-4 hover:underline " href="/about/">About</a>
+      </div>
       
       
       
-      <div><a class="px-4 hover:underline "
-          href="/blog/">Blog</a></div>
-      
-      
-      
-      
-      
-      <div><a class="px-4 hover:underline font-bold"
-          href="/projects/">Projects</a></div>
+      <div>
+        <a class="px-4 hover:underline " href="/blog/">Blog</a>
+      </div>
       
       
       
       
       
-      
-      
-      
+      <div>
+        <a class="px-4 hover:underline font-bold" href="/projects/">Projects</a>
+      </div>
       
       
       
       
       
       
-
+      
+      
+      
+      
+      
+      
+      
+      
+      
       <div class="theme-switcher">
         <button id="theme-toggle" class="px-4" aria-label="Toggle theme">
           <span class="dark:hidden">
@@ -97,14 +97,17 @@
       
     </div>
 
-    <!-- Mobile Menu Button -->
-    <div class="mobile-controls flex items-center space-x-4">
-      <!-- Mobile Theme Toggle -->
-      <button id="mobile-theme-toggle" class="px-2" aria-label="Toggle theme">
+    <div class="flex items-center space-x-2 md:hidden">
+      <button id="mobile-menu-toggle" class="p-2" aria-label="Toggle mobile menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+      <button id="mobile-theme-toggle" class="p-2" aria-label="Toggle theme">
         <span class="dark:hidden">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
-          </svg>
+            </svg>
         </span>
         <span class="hidden dark:inline">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -112,20 +115,21 @@
           </svg>
         </span>
       </button>
-
-      <!-- Hamburger Menu Button -->
-      <button id="mobile-menu-toggle" class="px-2" aria-label="Toggle mobile menu">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
-      </button>
     </div>
   </div>
 </nav>
 
-<!-- Mobile Menu Dropdown -->
-<div id="mobile-menu" class="mobile-menu-dropdown hidden absolute top-full left-0 right-0 bg-white dark:bg-neutral-800 shadow-lg z-20 border-t border-gray-200 dark:border-neutral-600">
+<div id="mobile-menu" class="mobile-menu-dropdown absolute top-16 left-0 right-0 bg-white dark:bg-neutral-800 shadow-lg z-20 hidden">
   <div class="px-5 py-3 space-y-2">
+    <div class="flex justify-between items-center py-2 px-3">
+      <p class="text-xl font-bold">Menu</p>
+      <button id="mobile-menu-close" aria-label="Close mobile menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+
     
     
     
@@ -165,7 +169,40 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    // Existing language dropdown functionality
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const mobileMenuClose = document.getElementById('mobile-menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (mobileMenuToggle && mobileMenu) {
+      mobileMenuToggle.addEventListener('click', function (e) {
+        e.stopPropagation();
+        mobileMenu.classList.add('show');
+      });
+    }
+
+    if (mobileMenuClose && mobileMenu) {
+      mobileMenuClose.addEventListener('click', function (e) {
+        e.stopPropagation();
+        mobileMenu.classList.remove('show');
+      });
+    }
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function (event) {
+      if (!mobileMenuToggle.contains(event.target) && !mobileMenu.contains(event.target)) {
+        mobileMenu.classList.remove('show');
+      }
+    });
+
+    // Close mobile menu when clicking on a link
+    const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+    mobileMenuLinks.forEach(link => {
+      link.addEventListener('click', function () {
+        mobileMenu.classList.remove('show');
+      });
+    });
+
+    // Language dropdown functionality
     const currentLangButton = document.querySelector('.current-language');
     const dropdownContent = document.querySelector('.dropdown-content');
 
@@ -181,31 +218,6 @@
       });
     }
 
-    // Mobile menu functionality
-    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    if (mobileMenuToggle && mobileMenu) {
-      mobileMenuToggle.addEventListener('click', function () {
-        mobileMenu.classList.toggle('hidden');
-      });
-
-      // Close mobile menu when clicking outside
-      document.addEventListener('click', function (event) {
-        if (!mobileMenuToggle.contains(event.target) && !mobileMenu.contains(event.target)) {
-          mobileMenu.classList.add('hidden');
-        }
-      });
-
-      // Close mobile menu when clicking on a link
-      const mobileMenuLinks = mobileMenu.querySelectorAll('a');
-      mobileMenuLinks.forEach(link => {
-        link.addEventListener('click', function () {
-          mobileMenu.classList.add('hidden');
-        });
-      });
-    }
-
     // Sync theme toggles (desktop and mobile)
     const themeToggle = document.getElementById('theme-toggle');
     const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
@@ -213,8 +225,6 @@
     function syncThemeToggles() {
       if (themeToggle && mobileThemeToggle) {
         const clickHandler = function() {
-          // Your existing theme toggle logic here
-          // This ensures both buttons work the same way
           document.documentElement.classList.toggle('dark');
         };
 
@@ -222,11 +232,11 @@
         mobileThemeToggle.addEventListener('click', clickHandler);
       }
     }
-
     syncThemeToggles();
   });
 </script>
  
+    <main class="main-content">
       <section class="container mx-auto pt-20 pb-10 lg:pt-[120px] lg:pb-20 min-h-screen">
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16" data-motion="stagger-cards" data-motion-onscroll="false">
     
@@ -251,6 +261,7 @@
   </div>
 </section>
  
+    </main>
     
 
 <footer class="w-full bottom-0">
@@ -389,113 +400,14 @@
           }, 300); // Duration of the gentle bounce animation
         });
       });
-    </script>
-    <script>
       document.addEventListener('DOMContentLoaded', function() {
-        // Initialize motion animations for all sections
-        const motionElements = document.querySelectorAll('[data-motion]');
-        
-        motionElements.forEach(element => {
-          const animationType = element.getAttribute('data-motion');
-          const onScroll = element.getAttribute('data-motion-onscroll') !== 'false';
-          
-          // Handle stagger cards differently
-          if (animationType === 'stagger-cards') {
-            const cards = element.children;
-            Array.from(cards).forEach((card, index) => {
-              card.style.opacity = '0';
-              card.style.transform = 'translateY(30px)';
-            });
-          } else {
-            // Set initial state for regular animations
-            element.style.opacity = '0';
-            element.style.transform = getInitialTransform(animationType);
-          }
-          
-          if (onScroll) {
-            // Create intersection observer for scroll-triggered animations
-            const observer = new IntersectionObserver((entries) => {
-              entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                  animateElement(entry.target, animationType);
-                  observer.unobserve(entry.target);
-                }
-              });
-            }, { threshold: 0.2 });
-            
-            observer.observe(element);
-          } else {
-            // Animate immediately if not dependent on scroll
-            animateElement(element, animationType);
-          }
-        });
-        
-        function getInitialTransform(type) {
-          switch(type) {
-            case 'fadeInLeft':
-              return 'translateX(-100px)';
-            case 'fadeInRight':
-              return 'translateX(100px)';
-            case 'fadeInUp':
-              return 'translateY(50px)';
-            case 'fadeInDown':
-              return 'translateY(-50px)';
-            default:
-              return 'translateY(0)';
-          }
-        }
-        
-        function animateElement(element, type) {
-          // Get custom delay and duration from data attributes
-          const customDelay = parseFloat(element.getAttribute('data-motion-delay')) || 0;
-          const customDuration = parseFloat(element.getAttribute('data-motion-duration')) || (type === 'stagger-cards' ? 0.6 : 0.8);
-          
-          if (type === 'stagger-cards') {
-            // Animate cards with stagger effect
-            const cards = Array.from(element.children);
-            cards.forEach((card, index) => {
-              Motion.animate(card, 
-                { 
-                  opacity: [0, 1],
-                  transform: ['translateY(30px)', 'translateY(0)']
-                },
-                { 
-                  duration: customDuration,
-                  delay: customDelay + (index * 0.1),
-                  easing: 'ease-out'
-                }
-              );
-            });
-          } else {
-            // Regular animations with custom delay and duration
-            Motion.animate(element, 
-              { 
-                opacity: [0, 1],
-                transform: [getInitialTransform(type), 'translate(0, 0)']
-              },
-              { 
-                duration: customDuration,
-                delay: customDelay,
-                easing: 'ease-out'
-              }
-            );
-          }
-        }
-      });
-    </script>
-    <script>
-      // Theme switcher functionality - Updated to handle both desktop and mobile buttons
-      document.addEventListener('DOMContentLoaded', function() {
+        // Theme switcher logic
+        const htmlElement = document.documentElement;
         const themeToggle = document.getElementById('theme-toggle');
         const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
-        const htmlElement = document.documentElement;
-        
-        // Check for saved theme preference or default to 'dark'
-        const savedTheme = localStorage.getItem('theme');
-        const systemPreference = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-        const currentTheme = savedTheme || systemPreference;
-        
-        // Apply the current theme
+        const currentTheme = localStorage.getItem('theme');
+
+        // Set initial theme
         if (currentTheme === 'dark') {
           htmlElement.classList.add('dark');
         } else {
