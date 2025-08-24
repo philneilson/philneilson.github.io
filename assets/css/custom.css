@@ -1,0 +1,46 @@
+/* Minimal custom styles - only what's needed for mobile nav fix */
+
+/* Ensure main content doesn't get hidden behind the absolute positioned nav */
+main, 
+.content, 
+.main-content {
+  padding-top: 80px;
+}
+
+/* Hide mobile menu elements by default */
+#mobile-menu-toggle,
+#mobile-theme-toggle,
+#mobile-menu,
+.mobile-controls {
+  display: none;
+}
+
+/* Show desktop nav by default */
+.desktop-nav {
+  display: flex;
+}
+
+/* Only show hamburger menu below 365px */
+@media (max-width: 365px) {
+  /* Hide desktop navigation */
+  .desktop-nav {
+    display: none !important;
+  }
+  
+  /* Show mobile controls and hide desktop nav */
+  .mobile-controls {
+    display: flex !important;
+  }
+  
+  /* Mobile menu dropdown can be shown when toggled */
+  #mobile-menu {
+    display: block;
+  }
+  
+  /* Adjust content padding for mobile menu */
+  main, 
+  .content, 
+  .main-content {
+    padding-top: 120px;
+  }
+}
