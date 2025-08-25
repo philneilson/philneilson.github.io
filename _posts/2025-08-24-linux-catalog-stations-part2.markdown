@@ -7,7 +7,7 @@ categories: [libraries, Linux]
 image: /assets/images/posts/linux-mint.jpg
 ---
 
-The first step toward building your kiosk station is to install a fresh OS on the machine, and this post will walk you through this step. If you already are familiar with installing Linux on a computer, skip to Part 3.
+The first step toward building your kiosk station is to install a fresh OS on the machine, and this blog post will walk you through this step. If you already are familiar with installing Linux on a computer, skip to Part 3.
 
 I recommend and will be using **[Linux Mint 22.1 Cinnamon Edition](https://linuxmint.com/download.php)**. I like Mint because it's beginner-friendly (it has a fairly familiar visual setup if you are used to Windows), is not demanding on hardware (they say it will run on 2 GB of RAM but recommend 4 GB), and has good community support. If you're wondering "why Linux?" instead of just using Windows, here are a few reasons:
 * It's free.
@@ -19,13 +19,13 @@ If you haven't ever tried out Linux, I would highly encourage you to do so, and 
 
 ### Step 1: Download Linux Mint 22.1 Cinnamon Edition and create a bootable USB
 
-For this step, you'll need a USB flash drive (4 GB minimum) that is either empty or doesn't have data that you want to keep on it. This first step can be done on any computer; it doesn't necessarly have to be the computer you're setting up to be the catalog station.
+For this step, you'll need a USB flash drive (4 GB at the very minimum, but 8 GB would be best) that is either empty or doesn't have data that you want to keep on it. This first step can be done on any computer; it doesn't necessarly have to be the computer you're setting up to be the catalog station.
 
 First, visit the **[Linux Mint Website](https://linuxmint.com/)** and click **Download**.  Select the Cinnamon Edition and then select one of the Download mirrors to download the ISO file.
 
 *A note:* if you're using an older PC for this process, you might want to consider choosing the Xfce edition of Linux Mint instead, or for that matter you could try [Xubuntu](https://xubuntu.org/) or [Lubuntu](https://lubuntu.me/downloads/) for very old hardware. These should all run a bit faster on your computer, but then some of the following steps will be a bit different, especially setting up the custom xsession.
-
-Second, download **[Rufus](https://rufus.ie/en/)** which will write the ISO onto your flash drive and make it bootable. I used the standard rufus-4.9.exe version.
+ 
+Second, download a program to write the ISO to your flash drive; for that I would recommend **[Rufus](https://rufus.ie/en/)**. I used the standard rufus-4.9.exe version.
 
 Once your two downloads are complete, put your flash drive in the computer, navigate to your Downloads folder, and open the Rufus file you downloaded.  The exe file will run without needing to be installed.
 
@@ -45,7 +45,7 @@ To open your computer's **boot menu**, press the power button and then press the
 
 ![image of a Dell boot manager screen](/assets/images/posts/boot-to-usb.png "An example boot manager screen with a USB boot option")
 
-If you don't see your USB device listed anywhere, it is probably due to your BIOS settings. You might have to do a little internet searching for solutions, as troubleshooting that is beyond the scope of this post, but start by checking the boot mode setting (Legacy BIOS or UEFI) and secure boot mode.
+If you don't see your USB device listed anywhere, it is probably due to your BIOS settings. (You might have to do a little internet searching for solutions, as troubleshooting that is beyond the scope of this post, but start by checking the boot mode setting (Legacy BIOS or UEFI) and secure boot mode. If you find those options in your BIOS, try changing one, save and exit and bring back up the boot menu and see if your USB device is now showing up. If not, open the BIOS again, change it back and then change the other setting and try again.)
 
 Once you select your USB device in the boot menu and hit enter, it should load the Linux Mint GRUB menu. Hit enter to select the first option, **Start Linux Mint**.
 
