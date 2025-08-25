@@ -2,11 +2,15 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://philneilson.online/libraries/linux/2025/08/23/linux-catalog-stations-part1.html</loc>
-<lastmod>2025-08-23T18:03:16+00:00</lastmod>
+<lastmod>2025-08-23T00:00:00+00:00</lastmod>
 </url>
 <url>
 <loc>https://philneilson.online/libraries/linux/2025/08/24/linux-catalog-stations-part2.html</loc>
-<lastmod>2025-08-24T08:23:04+00:00</lastmod>
+<lastmod>2025-08-24T00:00:00+00:00</lastmod>
+</url>
+<url>
+<loc>https://philneilson.online/libraries/linux/2025/08/25/linux-catalog-stations-part3.html</loc>
+<lastmod>2025-08-25T00:00:00+00:00</lastmod>
 </url>
 <url>
 <loc>https://philneilson.online/projects/2025-08-22-gallup-childrens-museum-website/</loc>
@@ -32,6 +36,6 @@
 </url>
 <url>
 <loc>https://philneilson.online/assets/docs/Philip-Neilson-Resume-2025.pdf</loc>
-<lastmod>2025-08-25T03:44:41+00:00</lastmod>
+<lastmod>2025-08-25T19:56:49+00:00</lastmod>
 </url>
 </urlset>
