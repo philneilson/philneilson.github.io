@@ -18,8 +18,8 @@
 <meta property="og:title" content="Library Catalog Kiosk Stations, Free with Linux (Part 2)" />
 <meta name="author" content="Phil Neilson" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="The first step toward building your kiosk station is to install a fresh OS on the machine, and this blog post will walk you through this step. If you already are familiar with installing Linux on a computer, skip to Part 3." />
-<meta property="og:description" content="The first step toward building your kiosk station is to install a fresh OS on the machine, and this blog post will walk you through this step. If you already are familiar with installing Linux on a computer, skip to Part 3." />
+<meta name="description" content="The first step toward building your kiosk station is to install a fresh OS on the machine, and this post will walk you through this step. If you already are familiar with installing Linux on a computer, skip to Part 3." />
+<meta property="og:description" content="The first step toward building your kiosk station is to install a fresh OS on the machine, and this post will walk you through this step. If you already are familiar with installing Linux on a computer, skip to Part 3." />
 <link rel="canonical" href="https://philneilson.online/libraries/linux/2025/08/24/linux-catalog-stations-part2.html" />
 <meta property="og:url" content="https://philneilson.online/libraries/linux/2025/08/24/linux-catalog-stations-part2.html" />
 <meta property="og:site_name" content="Phil Neilson" />
@@ -30,7 +30,7 @@
 <meta property="twitter:image" content="https://philneilson.online/assets/images/posts/linux-mint.jpg" />
 <meta property="twitter:title" content="Library Catalog Kiosk Stations, Free with Linux (Part 2)" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Phil Neilson"},"dateModified":"2025-08-24T08:23:04+00:00","datePublished":"2025-08-24T08:23:04+00:00","description":"The first step toward building your kiosk station is to install a fresh OS on the machine, and this blog post will walk you through this step. If you already are familiar with installing Linux on a computer, skip to Part 3.","headline":"Library Catalog Kiosk Stations, Free with Linux (Part 2)","image":"https://philneilson.online/assets/images/posts/linux-mint.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"https://philneilson.online/libraries/linux/2025/08/24/linux-catalog-stations-part2.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://philneilson.online/assets/images/logo.avif"},"name":"Phil Neilson"},"url":"https://philneilson.online/libraries/linux/2025/08/24/linux-catalog-stations-part2.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Phil Neilson"},"dateModified":"2025-08-24T08:23:04+00:00","datePublished":"2025-08-24T08:23:04+00:00","description":"The first step toward building your kiosk station is to install a fresh OS on the machine, and this post will walk you through this step. If you already are familiar with installing Linux on a computer, skip to Part 3.","headline":"Library Catalog Kiosk Stations, Free with Linux (Part 2)","image":"https://philneilson.online/assets/images/posts/linux-mint.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"https://philneilson.online/libraries/linux/2025/08/24/linux-catalog-stations-part2.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://philneilson.online/assets/images/logo.avif"},"name":"Phil Neilson"},"url":"https://philneilson.online/libraries/linux/2025/08/24/linux-catalog-stations-part2.html"}</script>
 <!-- End Jekyll SEO tag -->
 
     <link rel="icon" type="image/png" href="/assets/images/favicon.png">
@@ -141,7 +141,7 @@
         <p class="px-2">•</p>
         <p>
           
-           7 mins  </p>
+           6 mins  </p>
       </div>
       <div>
         <div class="sharing-buttons flex  flex-wrap gap-1 justify-center ">
@@ -251,7 +251,7 @@
     
 
     <div data-motion="fadeInUp" data-motion-onscroll="false" data-motion-delay="1" data-motion-duration="0.2" class="my-6">
-      <p>The first step toward building your kiosk station is to install a fresh OS on the machine, and this blog post will walk you through this step. If you already are familiar with installing Linux on a computer, skip to Part 3.</p>
+      <p>The first step toward building your kiosk station is to install a fresh OS on the machine, and this post will walk you through this step. If you already are familiar with installing Linux on a computer, skip to Part 3.</p>
 
 <p>I recommend and will be using <strong><a href="https://linuxmint.com/download.php">Linux Mint 22.1 Cinnamon Edition</a></strong>. I like Mint because it’s beginner-friendly (it has a fairly familiar visual setup if you are used to Windows), is not demanding on hardware (they say it will run on 2 GB of RAM but recommend 4 GB), and has good community support. If you’re wondering “why Linux?” instead of just using Windows, here are a few reasons:</p>
 <ul>
@@ -265,13 +265,13 @@
 
 <h3 id="step-1-download-linux-mint-221-cinnamon-edition-and-create-a-bootable-usb">Step 1: Download Linux Mint 22.1 Cinnamon Edition and create a bootable USB</h3>
 
-<p>For this step, you’ll need a USB flash drive (4 GB at the very minimum, but 8 GB would be best) that is either empty or doesn’t have data that you want to keep on it. This first step can be done on any computer; it doesn’t necessarly have to be the computer you’re setting up to be the catalog station.</p>
+<p>For this step, you’ll need a USB flash drive (4 GB minimum) that is either empty or doesn’t have data that you want to keep on it. This first step can be done on any computer; it doesn’t necessarly have to be the computer you’re setting up to be the catalog station.</p>
 
 <p>First, visit the <strong><a href="https://linuxmint.com/">Linux Mint Website</a></strong> and click <strong>Download</strong>.  Select the Cinnamon Edition and then select one of the Download mirrors to download the ISO file.</p>
 
 <p><em>A note:</em> if you’re using an older PC for this process, you might want to consider choosing the Xfce edition of Linux Mint instead, or for that matter you could try <a href="https://xubuntu.org/">Xubuntu</a> or <a href="https://lubuntu.me/downloads/">Lubuntu</a> for very old hardware. These should all run a bit faster on your computer, but then some of the following steps will be a bit different, especially setting up the custom xsession.</p>
 
-<p>Second, download a program to write the ISO to your flash drive; for that I would recommend <strong><a href="https://rufus.ie/en/">Rufus</a></strong>. I used the standard rufus-4.9.exe version.</p>
+<p>Second, download <strong><a href="https://rufus.ie/en/">Rufus</a></strong>, which you’ll use to write the ISO image to your USB flash drive and make it bootable. I used the standard rufus-4.9.exe version.</p>
 
 <p>Once your two downloads are complete, put your flash drive in the computer, navigate to your Downloads folder, and open the Rufus file you downloaded.  The exe file will run without needing to be installed.</p>
 
@@ -293,7 +293,7 @@
 
 <p><img src="/assets/images/posts/boot-to-usb.png" alt="image of a Dell boot manager screen" title="An example boot manager screen with a USB boot option" /></p>
 
-<p>If you don’t see your USB device listed anywhere, it is probably due to your BIOS settings. (You might have to do a little internet searching for solutions, as troubleshooting that is beyond the scope of this post, but start by checking the boot mode setting (Legacy BIOS or UEFI) and secure boot mode. If you find those options in your BIOS, try changing one, save and exit and bring back up the boot menu and see if your USB device is now showing up. If not, open the BIOS again, change it back and then change the other setting and try again.)</p>
+<p>If you don’t see your USB device listed anywhere, it is probably due to your BIOS settings. You might have to do a little internet searching for solutions, as troubleshooting that is beyond the scope of this post, but start by checking the boot mode setting (Legacy BIOS or UEFI) and secure boot mode.</p>
 
 <p>Once you select your USB device in the boot menu and hit enter, it should load the Linux Mint GRUB menu. Hit enter to select the first option, <strong>Start Linux Mint</strong>.</p>
 
@@ -301,7 +301,7 @@
 
 <h3 id="step-3-install-linux-mint">Step 3: Install Linux Mint</h3>
 
-<p>After a period of loading, you should see Linux Mint’s Cinnnamon desktop load.</p>
+<p>After a minute or two, you should see Linux Mint’s Cinnnamon desktop load.</p>
 
 <p><img src="/assets/images/posts/mint-desktop.png" alt="image of Linux Mint's Cinnamon Desktop" title="Linux Mint's Cinnamon Desktop" /></p>
 
@@ -433,7 +433,7 @@
 
     <div class="font-mulish flex justify-center mb-10">
       
-      <a class="pr-2" href="/libraries/linux/2025/08/24/library-catalog-kiosk-stations-free-with-linux-part2.html">&laquo; Library Catalog Kiosk Stations, Free with Linux (Part 2)</a>
+      <a class="pr-2" href="/libraries/linux/2025/08/23/linux-catalog-stations-part1.html">&laquo; Library Catalog Kiosk Stations, Free with Linux (Part 1)</a>
       
       
     </div>
