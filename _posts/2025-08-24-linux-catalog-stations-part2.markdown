@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  Library Catalog Kiosk Stations, Free with Linux (Part 2)
-date:   2025-08-24 01:23:04 -0700
+title:  Library Catalog Kiosk Stations, Free with Linux (Part 2) - Install the OS
+date:   2025-08-24
 author: Phil Neilson
 categories: [libraries, Linux]
 image: /assets/images/posts/linux-mint.jpg
