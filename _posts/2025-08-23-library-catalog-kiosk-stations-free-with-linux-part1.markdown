@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Library Catalog Kiosk Stations, Free with Linux Mint (Part 1)
+title:  Library Catalog Kiosk Stations, Free with Linux (Part 1)
 date:   2025-08-23 11:03:16 -0700
 author: Phil Neilson
 categories: [libraries, Linux]
