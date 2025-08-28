@@ -2,3 +2,9 @@ strong a,
 a strong {
   font-weight: bold;
 }
+
+.indented-block {
+  margin-left: 2rem;
+  padding-left: 0.5rem; /* This provides a small visual indent from the margin */
+  border-left: 2px solid #ccc; /* Optional: This creates a subtle line like a blockquote */
+}
