@@ -1,4 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://philneilson.online/feed.xml" rel="self" type="application/atom+xml" /><link href="https://philneilson.online/" rel="alternate" type="text/html" /><updated>2025-09-03T22:11:47+00:00</updated><id>https://philneilson.online/feed.xml</id><title type="html">Phil Neilson</title><subtitle>A children &amp; youth librarian&apos;s journey into librarianship, tech, and web development.</subtitle><entry><title type="html">Library Catalog Kiosk Stations, Free with Linux (Part 4) - Create Kiosk Script &amp;amp; Set Up Custom Session</title><link href="https://philneilson.online/libraries/linux/2025/08/28/linux-catalog-stations-part4.html" rel="alternate" type="text/html" title="Library Catalog Kiosk Stations, Free with Linux (Part 4) - Create Kiosk Script &amp;amp; Set Up Custom Session" /><published>2025-08-28T00:00:00+00:00</published><updated>2025-08-28T00:00:00+00:00</updated><id>https://philneilson.online/libraries/linux/2025/08/28/linux-catalog-stations-part4</id><content type="html" xml:base="https://philneilson.online/libraries/linux/2025/08/28/linux-catalog-stations-part4.html"><![CDATA[<p>A shell script is a simple text file containing a list of commands that you’d normally type into your computer’s command line (the terminal). Instead of typing them one by one, you can save them all in a single file and run the file to execute all the commands in order. “Bash” is the scripting language that is commonly used to give the commands in the terminal. In this post, we’ll create a master <strong>Kiosk Manager</strong> shell script that will bring all of the programs and utilities that we installed in <strong><a href="https://philneilson.online/libraries/linux/2025/08/25/linux-catalog-stations-part3.html">Part 3</a></strong> together. We will also create a custom desktop session optimized for our kiosk station.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://philneilson.online/feed.xml" rel="self" type="application/atom+xml" /><link href="https://philneilson.online/" rel="alternate" type="text/html" /><updated>2025-09-03T22:20:27+00:00</updated><id>https://philneilson.online/feed.xml</id><title type="html">Phil Neilson</title><subtitle>A children &amp; youth librarian&apos;s journey into librarianship, tech, and web development.</subtitle><entry><title type="html">Library Catalog Kiosk Stations, Free with Linux (Part 4) - Create Kiosk Script &amp;amp; Set Up Custom Session</title><link href="https://philneilson.online/libraries/linux/2025/08/28/linux-catalog-stations-part4.html" rel="alternate" type="text/html" title="Library Catalog Kiosk Stations, Free with Linux (Part 4) - Create Kiosk Script &amp;amp; Set Up Custom Session" /><published>2025-08-28T00:00:00+00:00</published><updated>2025-08-28T00:00:00+00:00</updated><id>https://philneilson.online/libraries/linux/2025/08/28/linux-catalog-stations-part4</id><content type="html" xml:base="https://philneilson.online/libraries/linux/2025/08/28/linux-catalog-stations-part4.html"><![CDATA[<h2 id="posts-in-this-series">Posts in this Series:</h2>
+<ul>
+  <li><strong><a href="https://philneilson.online/libraries/linux/2025/08/23/linux-catalog-stations-part1.html">Library Catalog Kiosk Stations, Free with Linux (Part 1)</a></strong></li>
+  <li><strong><a href="https://philneilson.online/libraries/linux/2025/08/24/linux-catalog-stations-part2.html">Library Catalog Kiosk Stations, Free with Linux (Part 2) - Install the OS</a></strong></li>
+  <li><strong><a href="https://philneilson.online/libraries/linux/2025/08/25/linux-catalog-stations-part3.html">Library Catalog Kiosk Stations, Free with Linux (Part 3) - Install and Configure Utilities</a></strong></li>
+  <li><strong><a href="https://philneilson.online/libraries/linux/2025/08/28/linux-catalog-stations-part4.html">Library Catalog Kiosk Stations, Free with Linux (Part 4) - Create Kiosk Script &amp; Custom Session</a></strong></li>
+</ul>
+
+<hr />
+
+<p>A shell script is a simple text file containing a list of commands that you’d normally type into your computer’s command line (the terminal). Instead of typing them one by one, you can save them all in a single file and run the file to execute all the commands in order. “Bash” is the scripting language that is commonly used to give the commands in the terminal. In this post, we’ll create a master <strong>Kiosk Manager</strong> shell script that will bring all of the programs and utilities that we installed in <strong><a href="https://philneilson.online/libraries/linux/2025/08/25/linux-catalog-stations-part3.html">Part 3</a></strong> together. We will also create a custom desktop session optimized for our kiosk station.</p>
+
+<hr />
 
 <h2 id="step-1-create-a-kiosk-manager-script">Step 1: Create a Kiosk Manager Script</h2>
 
@@ -93,6 +105,8 @@ done
 
 <p>You shouldn’t get any reply back from the terminal if this operation is successful, but now you just gave permission for this file to be executed as a script.</p>
 
+<hr />
+
 <h2 id="step-2-create-a-custom-xsession">Step 2: Create a Custom Xsession</h2>
 
 <p>We are getting very close to having a working kiosk station! The last thing that we will do is create a custom Xsession that will load only the Chromium browser upon login, rather than loading and running the Cinnamon desktop in the background.</p>
@@ -145,6 +159,8 @@ Type=Application
 
 <p>Your custom Xsession should now be all set up.</p>
 
+<hr />
+
 <h2 id="step-3-set-power-button-to-shut-down-computer">Step 3: Set Power Button to Shut Down Computer</h2>
 
 <p>One final step before testing your work. If your library procedures are like mine, library staff shut down the computers at the end of the day. It is very useful for staff to be able to press one button to boot the computer, and also one button to shut it down.</p>
@@ -157,6 +173,8 @@ Type=Application
 
 <p>Depending on your system, you may also want to set some of the other options such as “Turn off the screen when inactive for” to <strong>Never</strong>, so that your catalog kiosk station doesn’t go to sleep or turn off its display.</p>
 
+<hr />
+
 <h2 id="step-4-test-it-out">Step 4: Test It Out</h2>
 
 <p>Now, log out by clicking the main menu icon in the lower left, then clicking the “logout” button (it is the button right above the red “shutdown” button and looks like the shutdown button turned on its side).</p>
@@ -166,6 +184,8 @@ Type=Application
 <p><img src="/assets/images/posts/desktop-session.jpg" alt="image of Mint's desktop session menu" title="Mint's Desktop Sessions Menu" /></p>
 
 <p>Click that option, and then enter your password. If the scripts that we created in this post are working correctly, your browser should launch to your catalog’s homepage.  You did it!</p>
+
+<hr />
 
 <h2 id="exiting-the-custom-session">Exiting the Custom Session</h2>
 
@@ -179,6 +199,8 @@ Type=Application
 <p>This command will force the <strong>kiosk-manager.sh</strong> script to stop. If you recall from our kiosk-session.sh script above, we told it to shut down the Xsession when the Kiosk Manager script is stopped. You should be returned to the Mint login page. To log back into your regular system, click the circle icon to the right of your username to open the desktop sessions menu, and then choose “Cinnamon” again.  Enter your password, and you’ll be logged back into the regular desktop, able to update your system or make any necessary changes.</p>
 
 <p>Your most recently selected desktop selection will be loaded upon startup, so once you are done making any changes, be sure to log out, select your “Kiosk Broswer” custom session, and enter your password to log in again. Now when you shut down your computer and reboot, it will boot into your custom catalog kiosk session.</p>
+
+<hr />
 
 <h2 id="conclusion">Conclusion</h2>
 
@@ -196,9 +218,21 @@ Type=Application
 
 <p>In doing so, we have created a <strong>free</strong>, reliable, locked-down kiosk station that can be powered on in the morning with a single button push, used by patrons throughout the day to access your library’s catalog, and shutdown in the evening with a single button push.</p>
 
-<p>If you are a librarian who has been following along with these instructions, I hope that you’ve enjoyed this learning process and are interested in exploring Linux further.</p>]]></content><author><name>Phil Neilson</name></author><category term="libraries" /><category term="Linux" /><summary type="html"><![CDATA[A shell script is a simple text file containing a list of commands that you’d normally type into your computer’s command line (the terminal). Instead of typing them one by one, you can save them all in a single file and run the file to execute all the commands in order. “Bash” is the scripting language that is commonly used to give the commands in the terminal. In this post, we’ll create a master Kiosk Manager shell script that will bring all of the programs and utilities that we installed in Part 3 together. We will also create a custom desktop session optimized for our kiosk station.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://philneilson.online/assets/images/posts/bash.jpg" /><media:content medium="image" url="https://philneilson.online/assets/images/posts/bash.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Library Catalog Kiosk Stations, Free with Linux (Part 3) - Install and Configure Utilities</title><link href="https://philneilson.online/libraries/linux/2025/08/25/linux-catalog-stations-part3.html" rel="alternate" type="text/html" title="Library Catalog Kiosk Stations, Free with Linux (Part 3) - Install and Configure Utilities" /><published>2025-08-25T00:00:00+00:00</published><updated>2025-08-25T00:00:00+00:00</updated><id>https://philneilson.online/libraries/linux/2025/08/25/linux-catalog-stations-part3</id><content type="html" xml:base="https://philneilson.online/libraries/linux/2025/08/25/linux-catalog-stations-part3.html"><![CDATA[<p>Now that you have a fresh installation of Linux Mint on your catalog computer kiosk station, you’re ready to configure the kiosk session to run in a browser automatically when the computer is booted. In this post, we’ll be going through the installation and setup of a browser and a few utilities that will help us meet the requirements for the kiosk station outlined in part 1.</p>
+<p>If you are a librarian who has been following along with these instructions, I hope that you’ve enjoyed this learning process and are interested in exploring Linux further.</p>]]></content><author><name>Phil Neilson</name></author><category term="libraries" /><category term="Linux" /><summary type="html"><![CDATA[Posts in this Series: Library Catalog Kiosk Stations, Free with Linux (Part 1) Library Catalog Kiosk Stations, Free with Linux (Part 2) - Install the OS Library Catalog Kiosk Stations, Free with Linux (Part 3) - Install and Configure Utilities Library Catalog Kiosk Stations, Free with Linux (Part 4) - Create Kiosk Script &amp; Custom Session]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://philneilson.online/assets/images/posts/bash.jpg" /><media:content medium="image" url="https://philneilson.online/assets/images/posts/bash.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Library Catalog Kiosk Stations, Free with Linux (Part 3) - Install and Configure Utilities</title><link href="https://philneilson.online/libraries/linux/2025/08/25/linux-catalog-stations-part3.html" rel="alternate" type="text/html" title="Library Catalog Kiosk Stations, Free with Linux (Part 3) - Install and Configure Utilities" /><published>2025-08-25T00:00:00+00:00</published><updated>2025-08-25T00:00:00+00:00</updated><id>https://philneilson.online/libraries/linux/2025/08/25/linux-catalog-stations-part3</id><content type="html" xml:base="https://philneilson.online/libraries/linux/2025/08/25/linux-catalog-stations-part3.html"><![CDATA[<h2 id="posts-in-this-series">Posts in this Series:</h2>
+<ul>
+  <li><strong><a href="https://philneilson.online/libraries/linux/2025/08/23/linux-catalog-stations-part1.html">Library Catalog Kiosk Stations, Free with Linux (Part 1)</a></strong></li>
+  <li><strong><a href="https://philneilson.online/libraries/linux/2025/08/24/linux-catalog-stations-part2.html">Library Catalog Kiosk Stations, Free with Linux (Part 2) - Install the OS</a></strong></li>
+  <li><strong><a href="https://philneilson.online/libraries/linux/2025/08/25/linux-catalog-stations-part3.html">Library Catalog Kiosk Stations, Free with Linux (Part 3) - Install and Configure Utilities</a></strong></li>
+  <li><strong><a href="https://philneilson.online/libraries/linux/2025/08/28/linux-catalog-stations-part4.html">Library Catalog Kiosk Stations, Free with Linux (Part 4) - Create Kiosk Script &amp; Custom Session</a></strong></li>
+</ul>
+
+<hr />
+
+<p>Now that you have a fresh installation of Linux Mint on your catalog computer kiosk station, you’re ready to configure the kiosk session to run in a browser automatically when the computer is booted. In this post, we’ll be going through the installation and setup of a browser and a few utilities that will help us meet the requirements for the kiosk station outlined in part 1.</p>
 
 <p>A note about these instructions. On Linux (as in most computing) there are two ways to get something done: with the command line in a terminal, or with the graphical interface. Some things are easier to do one way than the other. Experienced Linux users and adminsitrators tend to prefer the command line because often you can accomplish tasks with a terse command that would take lots of clicking through menus or folders if you went the graphical route.  As a Linux hobbyist who is very much still learning, I have found that there are some things that are easier for me to accomplish with the command line, and some things that just make more sense to me when I use the graphical interface.  So in these instructions, I am going to use a mix based on what felt more comfortable for me.</p>
+
+<hr />
 
 <h3 id="step-1-install-chromium-browser">Step 1: Install Chromium Browser</h3>
 
@@ -218,6 +252,8 @@ Type=Application
 <p><img src="/assets/images/posts/software-center.jpg" alt="image of Linux Mint software center" title="Linux Mint's Software Center" /></p>
 
 <p>Once the Software Manager opens, search for Chromium in the search bar.  Once you’ve found it, select it and click <strong>Install</strong>.  If you get an error message telling you that it isn’t able to install Chromium, open up a terminal and run the update command again, then reopen the Sotware Manager and try again.</p>
+
+<hr />
 
 <h3 id="step-2-install-additional-utilities">Step 2: Install Additional Utilities</h3>
 
@@ -243,6 +279,8 @@ Type=Application
 </ul>
 
 <p>A note about this and other commands you will run in the terminal later in this process: you may run into error messages.  When you are new to using the command line, an error message can feel like an insurmountable hurdle.  Even just parsing the error message can sometimes be tricky. I have learned that copying your command and its error output (<strong>ctrl</strong> + <strong>shift</strong> + <strong>C</strong>) and pasting it in a chat based AI service can work wonders. I’m not saying that AI is infallible or that you should blindly trust it, but I’ve found it to be remarkably good at explaining to me what the error is and what I can do to fix it (often, just running another command, or sometimes installing another program that the one you are installing depends on). The point is, don’t panic if you get an error message–it is probably solvable, and with a fairly few number of steps!</p>
+
+<hr />
 
 <h2 id="step-3-configure-squid">Step 3: Configure Squid</h2>
 
@@ -300,6 +338,8 @@ http_access deny all
 
 <p>Enter your password, and press “enter”. You should get a message telling you Squid started successfully.  Squid should now be configured with your custom URL whitelist.</p>
 
+<hr />
+
 <h2 id="step-4-configure-xbindkeys">Step 4: Configure xbindkeys</h2>
 
 <p>The last configuration that we need to make to our utilities is to tell our <strong>xbindkeys</strong> utility to restart the kiosk station back to its home page (ie. the start page of your catalog) when you press a given button.  In my library’s case, this is important because if a user views ebook resource on the external Overdrive site, they have no way to get back to the catalog becuase there will be on navigation bar.  So we’ll use <strong>xbindkeys</strong> to create our own custom home key instead.</p>
@@ -320,7 +360,17 @@ http_access deny all
 
 <p>This file will make <strong>F11</strong> your new “home” key.  You can put a little sign on your computer station saying, “To start over, press F11” to help your users.  You could change this to be a different key if you would like, just be sure it’s not a key the user would be using to type or navigate the catalog interface.</p>
 
-<p>Right now, this configuration doesn’t make a lot of sense, because we haven’t yet created the kiosk-manager.sh script that this configuration file tells the computer to run once a person hits F11. Setting up that script and all final setup is what <strong>Part 4</strong> is all about.</p>]]></content><author><name>Phil Neilson</name></author><category term="libraries" /><category term="Linux" /><summary type="html"><![CDATA[Now that you have a fresh installation of Linux Mint on your catalog computer kiosk station, you’re ready to configure the kiosk session to run in a browser automatically when the computer is booted. In this post, we’ll be going through the installation and setup of a browser and a few utilities that will help us meet the requirements for the kiosk station outlined in part 1.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://philneilson.online/assets/images/posts/utility.jpg" /><media:content medium="image" url="https://philneilson.online/assets/images/posts/utility.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Library Catalog Kiosk Stations, Free with Linux (Part 2) - Install the OS</title><link href="https://philneilson.online/libraries/linux/2025/08/24/linux-catalog-stations-part2.html" rel="alternate" type="text/html" title="Library Catalog Kiosk Stations, Free with Linux (Part 2) - Install the OS" /><published>2025-08-24T00:00:00+00:00</published><updated>2025-08-24T00:00:00+00:00</updated><id>https://philneilson.online/libraries/linux/2025/08/24/linux-catalog-stations-part2</id><content type="html" xml:base="https://philneilson.online/libraries/linux/2025/08/24/linux-catalog-stations-part2.html"><![CDATA[<p>The first step toward building your kiosk station is to install a fresh OS on the machine, and this post will walk you through this step. If you already are familiar with installing Linux on a computer, skip to Part 3.</p>
+<p>Right now, this configuration doesn’t make a lot of sense, because we haven’t yet created the kiosk-manager.sh script that this configuration file tells the computer to run once a person hits F11. Setting up that script and all final setup is what <strong>Part 4</strong> is all about.</p>]]></content><author><name>Phil Neilson</name></author><category term="libraries" /><category term="Linux" /><summary type="html"><![CDATA[Posts in this Series: Library Catalog Kiosk Stations, Free with Linux (Part 1) Library Catalog Kiosk Stations, Free with Linux (Part 2) - Install the OS Library Catalog Kiosk Stations, Free with Linux (Part 3) - Install and Configure Utilities Library Catalog Kiosk Stations, Free with Linux (Part 4) - Create Kiosk Script &amp; Custom Session]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://philneilson.online/assets/images/posts/utility.jpg" /><media:content medium="image" url="https://philneilson.online/assets/images/posts/utility.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Library Catalog Kiosk Stations, Free with Linux (Part 2) - Install the OS</title><link href="https://philneilson.online/libraries/linux/2025/08/24/linux-catalog-stations-part2.html" rel="alternate" type="text/html" title="Library Catalog Kiosk Stations, Free with Linux (Part 2) - Install the OS" /><published>2025-08-24T00:00:00+00:00</published><updated>2025-08-24T00:00:00+00:00</updated><id>https://philneilson.online/libraries/linux/2025/08/24/linux-catalog-stations-part2</id><content type="html" xml:base="https://philneilson.online/libraries/linux/2025/08/24/linux-catalog-stations-part2.html"><![CDATA[<h2 id="posts-in-this-series">Posts in this Series:</h2>
+<ul>
+  <li><strong><a href="https://philneilson.online/libraries/linux/2025/08/23/linux-catalog-stations-part1.html">Library Catalog Kiosk Stations, Free with Linux (Part 1)</a></strong></li>
+  <li><strong><a href="https://philneilson.online/libraries/linux/2025/08/24/linux-catalog-stations-part2.html">Library Catalog Kiosk Stations, Free with Linux (Part 2) - Install the OS</a></strong></li>
+  <li><strong><a href="https://philneilson.online/libraries/linux/2025/08/25/linux-catalog-stations-part3.html">Library Catalog Kiosk Stations, Free with Linux (Part 3) - Install and Configure Utilities</a></strong></li>
+  <li><strong><a href="https://philneilson.online/libraries/linux/2025/08/28/linux-catalog-stations-part4.html">Library Catalog Kiosk Stations, Free with Linux (Part 4) - Create Kiosk Script &amp; Custom Session</a></strong></li>
+</ul>
+
+<hr />
+
+<p>The first step toward building your kiosk station is to install a fresh OS on the machine, and this post will walk you through this step. If you already are familiar with installing Linux on a computer, skip to Part 3.</p>
 
 <p>I recommend and will be using <strong><a href="https://linuxmint.com/download.php">Linux Mint 22.1 Cinnamon Edition</a></strong>. I like Mint because it’s beginner-friendly (it has a fairly familiar visual setup if you are used to Windows), is not demanding on hardware (they say it will run on 2 GB of RAM but recommend 4 GB), and has good community support. If you’re wondering “why Linux?” instead of just using Windows, here are a few reasons:</p>
 <ul>
@@ -331,6 +381,8 @@ http_access deny all
 </ul>
 
 <p>If you haven’t ever tried out Linux, I would highly encourage you to do so, and Linux Mint is a great first distribution to work with.</p>
+
+<hr />
 
 <h3 id="step-1-download-linux-mint-221-cinnamon-edition-and-create-a-bootable-usb">Step 1: Download Linux Mint 22.1 Cinnamon Edition and create a bootable USB</h3>
 
@@ -354,6 +406,8 @@ http_access deny all
   <li>Once your USB is ready, the status bar will read READY and you can then click <em>Close</em>.</li>
 </ul>
 
+<hr />
+
 <h3 id="step-2-boot-to-usb">Step 2: Boot to USB</h3>
 
 <p>Insert your newly-made USB flash drive into the computer that you’re setting up to be a catalog station. The computer should be powered off. You will now boot your computer and tell it to load the operating system image that is on the USB flash drive, rather than the computer’s hard drive. The process for doing this varies a bit from computer to computer and might take a couple of tries.</p>
@@ -367,6 +421,8 @@ http_access deny all
 <p>Once you select your USB device in the boot menu and hit enter, it should load the Linux Mint GRUB menu. Hit enter to select the first option, <strong>Start Linux Mint</strong>.</p>
 
 <p><img src="/assets/images/posts/mint-boot.png" alt="image of the Linux mint GRUB menu" title="Linux Mint's GRUB menu" /></p>
+
+<hr />
 
 <h3 id="step-3-install-linux-mint">Step 3: Install Linux Mint</h3>
 
@@ -391,7 +447,17 @@ http_access deny all
 
 <p><img src="/assets/images/posts/mint-install.png" alt="image of the Linux Mint installer's user account setup menu" title="The Linux Mint installer's user account setup menu" /></p>
 
-<p>The installer will take awhile to complete it’s installation process. When the process is complete, a menu will as you if you want to continue your live session or restart the computer. When you restart the computer, a screen will tell you to remove the installation medium and then press enter, and you can remove the USB flash drive at this point. Hit enter, and your computer should boot to your shiny new installation of Linux Mint on your hard drive!</p>]]></content><author><name>Phil Neilson</name></author><category term="libraries" /><category term="Linux" /><summary type="html"><![CDATA[The first step toward building your kiosk station is to install a fresh OS on the machine, and this post will walk you through this step. If you already are familiar with installing Linux on a computer, skip to Part 3.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://philneilson.online/assets/images/posts/linux-mint.jpg" /><media:content medium="image" url="https://philneilson.online/assets/images/posts/linux-mint.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Library Catalog Kiosk Stations, Free with Linux (Part 1)</title><link href="https://philneilson.online/libraries/linux/2025/08/23/linux-catalog-stations-part1.html" rel="alternate" type="text/html" title="Library Catalog Kiosk Stations, Free with Linux (Part 1)" /><published>2025-08-23T00:00:00+00:00</published><updated>2025-08-23T00:00:00+00:00</updated><id>https://philneilson.online/libraries/linux/2025/08/23/linux-catalog-stations-part1</id><content type="html" xml:base="https://philneilson.online/libraries/linux/2025/08/23/linux-catalog-stations-part1.html"><![CDATA[<p>In the library where I work, we recently had to find a new solution for our catalog computer stations. For the past few years, we had been running our catalog on computers with the excellent open-source, <strong>Linux-based <a href="https://porteus-kiosk.org/index.html">Porteus Kiosk</a></strong>.</p>
+<p>The installer will take awhile to complete it’s installation process. When the process is complete, a menu will as you if you want to continue your live session or restart the computer. When you restart the computer, a screen will tell you to remove the installation medium and then press enter, and you can remove the USB flash drive at this point. Hit enter, and your computer should boot to your shiny new installation of Linux Mint on your hard drive!</p>]]></content><author><name>Phil Neilson</name></author><category term="libraries" /><category term="Linux" /><summary type="html"><![CDATA[Posts in this Series: Library Catalog Kiosk Stations, Free with Linux (Part 1) Library Catalog Kiosk Stations, Free with Linux (Part 2) - Install the OS Library Catalog Kiosk Stations, Free with Linux (Part 3) - Install and Configure Utilities Library Catalog Kiosk Stations, Free with Linux (Part 4) - Create Kiosk Script &amp; Custom Session]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://philneilson.online/assets/images/posts/linux-mint.jpg" /><media:content medium="image" url="https://philneilson.online/assets/images/posts/linux-mint.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Library Catalog Kiosk Stations, Free with Linux (Part 1)</title><link href="https://philneilson.online/libraries/linux/2025/08/23/linux-catalog-stations-part1.html" rel="alternate" type="text/html" title="Library Catalog Kiosk Stations, Free with Linux (Part 1)" /><published>2025-08-23T00:00:00+00:00</published><updated>2025-08-23T00:00:00+00:00</updated><id>https://philneilson.online/libraries/linux/2025/08/23/linux-catalog-stations-part1</id><content type="html" xml:base="https://philneilson.online/libraries/linux/2025/08/23/linux-catalog-stations-part1.html"><![CDATA[<h2 id="posts-in-this-series">Posts in this Series:</h2>
+<ul>
+  <li><strong><a href="https://philneilson.online/libraries/linux/2025/08/23/linux-catalog-stations-part1.html">Library Catalog Kiosk Stations, Free with Linux (Part 1)</a></strong></li>
+  <li><strong><a href="https://philneilson.online/libraries/linux/2025/08/24/linux-catalog-stations-part2.html">Library Catalog Kiosk Stations, Free with Linux (Part 2) - Install the OS</a></strong></li>
+  <li><strong><a href="https://philneilson.online/libraries/linux/2025/08/25/linux-catalog-stations-part3.html">Library Catalog Kiosk Stations, Free with Linux (Part 3) - Install and Configure Utilities</a></strong></li>
+  <li><strong><a href="https://philneilson.online/libraries/linux/2025/08/28/linux-catalog-stations-part4.html">Library Catalog Kiosk Stations, Free with Linux (Part 4) - Create Kiosk Script &amp; Custom Session</a></strong></li>
+</ul>
+
+<hr />
+
+<p>In the library where I work, we recently had to find a new solution for our catalog computer stations. For the past few years, we had been running our catalog on computers with the excellent open-source, <strong>Linux-based <a href="https://porteus-kiosk.org/index.html">Porteus Kiosk</a></strong>.</p>
 
 <p>Prior to version 6.0.0, you could download Porteus, flash it to a USB, boot to the USB on your catalog computer and configure the settings you wanted, then install the image to the catalog computer’s hard drive, all for free. There was an optional “automatic updates and support” option that you could pay for, but you could just not check that box and it would run for free. We had it running all our catalog stations.</p>
 
@@ -399,7 +465,7 @@ http_access deny all
 
 <hr />
 
-<h3 id="the-free-alternative">The Free Alternative</h3>
+<h2 id="the-free-alternative">The Free Alternative</h2>
 
 <p>However, if you’re like me and want to save yourself some red tape and/or stretch your budget a bit further, you can create a catalog kiosk station that functions very similarly to Porteus Kiosk, for free.</p>
 
@@ -418,8 +484,8 @@ http_access deny all
 
 <hr />
 
-<h3 id="getting-started">Getting Started</h3>
+<h2 id="getting-started">Getting Started</h2>
 
 <p>I began this process with the very helpful tutorial video <strong><a href="https://www.youtube.com/watch?v=XC0JonvTTOk">How to turn a LINUX MINT PC into a Web KIOSK</a></strong> and its <strong><a href="https://www.youtube.com/watch?v=Tp6QBJcXUIo">Part 2</a></strong>, so thank you to TECHMIMIC for these excellent tutorials. However, after completing the instructions I still hadn’t gotten some of the features I listed above (URL whitelist, the ability to navigate a bit or at least not get stuck, reset upon inactivity), so I kept going.  The rest of the instructions are pieced together from blog and forum posts (my usual way of learning Linux) and, eventually some AI help (not my usual way, but it was helpful).</p>
 
-<p>These instructions are written by a librarian for other librarians, so they are by design not super technical and might overexplain things a bit. Also, there are certainly more elegant and lightweight ways to achieve all this (Porteus Kiosk is proof), but my hope is that this method will be replicable for a majority of those who give it a try.</p>]]></content><author><name>Phil Neilson</name></author><category term="libraries" /><category term="Linux" /><summary type="html"><![CDATA[In the library where I work, we recently had to find a new solution for our catalog computer stations. For the past few years, we had been running our catalog on computers with the excellent open-source, Linux-based Porteus Kiosk.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://philneilson.online/assets/images/posts/catalog.jpg" /><media:content medium="image" url="https://philneilson.online/assets/images/posts/catalog.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+<p>These instructions are written by a librarian for other librarians, so they are by design not super technical and might overexplain things a bit. Also, there are certainly more elegant and lightweight ways to achieve all this (Porteus Kiosk is proof), but my hope is that this method will be replicable for a majority of those who give it a try.</p>]]></content><author><name>Phil Neilson</name></author><category term="libraries" /><category term="Linux" /><summary type="html"><![CDATA[Posts in this Series: Library Catalog Kiosk Stations, Free with Linux (Part 1) Library Catalog Kiosk Stations, Free with Linux (Part 2) - Install the OS Library Catalog Kiosk Stations, Free with Linux (Part 3) - Install and Configure Utilities Library Catalog Kiosk Stations, Free with Linux (Part 4) - Create Kiosk Script &amp; Custom Session]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://philneilson.online/assets/images/posts/catalog.jpg" /><media:content medium="image" url="https://philneilson.online/assets/images/posts/catalog.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>

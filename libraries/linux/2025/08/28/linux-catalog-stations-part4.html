@@ -19,8 +19,8 @@
 <meta property="og:title" content="Library Catalog Kiosk Stations, Free with Linux (Part 4) - Create Kiosk Script &amp; Set Up Custom Session" />
 <meta name="author" content="Phil Neilson" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="A shell script is a simple text file containing a list of commands that you’d normally type into your computer’s command line (the terminal). Instead of typing them one by one, you can save them all in a single file and run the file to execute all the commands in order. “Bash” is the scripting language that is commonly used to give the commands in the terminal. In this post, we’ll create a master Kiosk Manager shell script that will bring all of the programs and utilities that we installed in Part 3 together. We will also create a custom desktop session optimized for our kiosk station." />
-<meta property="og:description" content="A shell script is a simple text file containing a list of commands that you’d normally type into your computer’s command line (the terminal). Instead of typing them one by one, you can save them all in a single file and run the file to execute all the commands in order. “Bash” is the scripting language that is commonly used to give the commands in the terminal. In this post, we’ll create a master Kiosk Manager shell script that will bring all of the programs and utilities that we installed in Part 3 together. We will also create a custom desktop session optimized for our kiosk station." />
+<meta name="description" content="Posts in this Series: Library Catalog Kiosk Stations, Free with Linux (Part 1) Library Catalog Kiosk Stations, Free with Linux (Part 2) - Install the OS Library Catalog Kiosk Stations, Free with Linux (Part 3) - Install and Configure Utilities Library Catalog Kiosk Stations, Free with Linux (Part 4) - Create Kiosk Script &amp; Custom Session" />
+<meta property="og:description" content="Posts in this Series: Library Catalog Kiosk Stations, Free with Linux (Part 1) Library Catalog Kiosk Stations, Free with Linux (Part 2) - Install the OS Library Catalog Kiosk Stations, Free with Linux (Part 3) - Install and Configure Utilities Library Catalog Kiosk Stations, Free with Linux (Part 4) - Create Kiosk Script &amp; Custom Session" />
 <link rel="canonical" href="https://philneilson.online/libraries/linux/2025/08/28/linux-catalog-stations-part4.html" />
 <meta property="og:url" content="https://philneilson.online/libraries/linux/2025/08/28/linux-catalog-stations-part4.html" />
 <meta property="og:site_name" content="Phil Neilson" />
@@ -31,7 +31,7 @@
 <meta property="twitter:image" content="https://philneilson.online/assets/images/posts/bash.jpg" />
 <meta property="twitter:title" content="Library Catalog Kiosk Stations, Free with Linux (Part 4) - Create Kiosk Script &amp; Set Up Custom Session" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Phil Neilson"},"dateModified":"2025-08-28T00:00:00+00:00","datePublished":"2025-08-28T00:00:00+00:00","description":"A shell script is a simple text file containing a list of commands that you’d normally type into your computer’s command line (the terminal). Instead of typing them one by one, you can save them all in a single file and run the file to execute all the commands in order. “Bash” is the scripting language that is commonly used to give the commands in the terminal. In this post, we’ll create a master Kiosk Manager shell script that will bring all of the programs and utilities that we installed in Part 3 together. We will also create a custom desktop session optimized for our kiosk station.","headline":"Library Catalog Kiosk Stations, Free with Linux (Part 4) - Create Kiosk Script &amp; Set Up Custom Session","image":"https://philneilson.online/assets/images/posts/bash.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"https://philneilson.online/libraries/linux/2025/08/28/linux-catalog-stations-part4.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://philneilson.online/assets/images/logo.avif"},"name":"Phil Neilson"},"url":"https://philneilson.online/libraries/linux/2025/08/28/linux-catalog-stations-part4.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Phil Neilson"},"dateModified":"2025-08-28T00:00:00+00:00","datePublished":"2025-08-28T00:00:00+00:00","description":"Posts in this Series: Library Catalog Kiosk Stations, Free with Linux (Part 1) Library Catalog Kiosk Stations, Free with Linux (Part 2) - Install the OS Library Catalog Kiosk Stations, Free with Linux (Part 3) - Install and Configure Utilities Library Catalog Kiosk Stations, Free with Linux (Part 4) - Create Kiosk Script &amp; Custom Session","headline":"Library Catalog Kiosk Stations, Free with Linux (Part 4) - Create Kiosk Script &amp; Set Up Custom Session","image":"https://philneilson.online/assets/images/posts/bash.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"https://philneilson.online/libraries/linux/2025/08/28/linux-catalog-stations-part4.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://philneilson.online/assets/images/logo.avif"},"name":"Phil Neilson"},"url":"https://philneilson.online/libraries/linux/2025/08/28/linux-catalog-stations-part4.html"}</script>
 <!-- End Jekyll SEO tag -->
 
     <link rel="icon" type="image/png" href="/assets/images/favicon.png">
@@ -252,7 +252,19 @@
     
 
     <div data-motion="fadeInUp" data-motion-onscroll="false" data-motion-delay="1" data-motion-duration="0.2" class="my-6">
-      <p>A shell script is a simple text file containing a list of commands that you’d normally type into your computer’s command line (the terminal). Instead of typing them one by one, you can save them all in a single file and run the file to execute all the commands in order. “Bash” is the scripting language that is commonly used to give the commands in the terminal. In this post, we’ll create a master <strong>Kiosk Manager</strong> shell script that will bring all of the programs and utilities that we installed in <strong><a href="https://philneilson.online/libraries/linux/2025/08/25/linux-catalog-stations-part3.html">Part 3</a></strong> together. We will also create a custom desktop session optimized for our kiosk station.</p>
+      <h2 id="posts-in-this-series">Posts in this Series:</h2>
+<ul>
+  <li><strong><a href="https://philneilson.online/libraries/linux/2025/08/23/linux-catalog-stations-part1.html">Library Catalog Kiosk Stations, Free with Linux (Part 1)</a></strong></li>
+  <li><strong><a href="https://philneilson.online/libraries/linux/2025/08/24/linux-catalog-stations-part2.html">Library Catalog Kiosk Stations, Free with Linux (Part 2) - Install the OS</a></strong></li>
+  <li><strong><a href="https://philneilson.online/libraries/linux/2025/08/25/linux-catalog-stations-part3.html">Library Catalog Kiosk Stations, Free with Linux (Part 3) - Install and Configure Utilities</a></strong></li>
+  <li><strong><a href="https://philneilson.online/libraries/linux/2025/08/28/linux-catalog-stations-part4.html">Library Catalog Kiosk Stations, Free with Linux (Part 4) - Create Kiosk Script &amp; Custom Session</a></strong></li>
+</ul>
+
+<hr />
+
+<p>A shell script is a simple text file containing a list of commands that you’d normally type into your computer’s command line (the terminal). Instead of typing them one by one, you can save them all in a single file and run the file to execute all the commands in order. “Bash” is the scripting language that is commonly used to give the commands in the terminal. In this post, we’ll create a master <strong>Kiosk Manager</strong> shell script that will bring all of the programs and utilities that we installed in <strong><a href="https://philneilson.online/libraries/linux/2025/08/25/linux-catalog-stations-part3.html">Part 3</a></strong> together. We will also create a custom desktop session optimized for our kiosk station.</p>
+
+<hr />
 
 <h2 id="step-1-create-a-kiosk-manager-script">Step 1: Create a Kiosk Manager Script</h2>
 
@@ -347,6 +359,8 @@ done
 
 <p>You shouldn’t get any reply back from the terminal if this operation is successful, but now you just gave permission for this file to be executed as a script.</p>
 
+<hr />
+
 <h2 id="step-2-create-a-custom-xsession">Step 2: Create a Custom Xsession</h2>
 
 <p>We are getting very close to having a working kiosk station! The last thing that we will do is create a custom Xsession that will load only the Chromium browser upon login, rather than loading and running the Cinnamon desktop in the background.</p>
@@ -399,6 +413,8 @@ Type=Application
 
 <p>Your custom Xsession should now be all set up.</p>
 
+<hr />
+
 <h2 id="step-3-set-power-button-to-shut-down-computer">Step 3: Set Power Button to Shut Down Computer</h2>
 
 <p>One final step before testing your work. If your library procedures are like mine, library staff shut down the computers at the end of the day. It is very useful for staff to be able to press one button to boot the computer, and also one button to shut it down.</p>
@@ -411,6 +427,8 @@ Type=Application
 
 <p>Depending on your system, you may also want to set some of the other options such as “Turn off the screen when inactive for” to <strong>Never</strong>, so that your catalog kiosk station doesn’t go to sleep or turn off its display.</p>
 
+<hr />
+
 <h2 id="step-4-test-it-out">Step 4: Test It Out</h2>
 
 <p>Now, log out by clicking the main menu icon in the lower left, then clicking the “logout” button (it is the button right above the red “shutdown” button and looks like the shutdown button turned on its side).</p>
@@ -420,6 +438,8 @@ Type=Application
 <p><img src="/assets/images/posts/desktop-session.jpg" alt="image of Mint's desktop session menu" title="Mint's Desktop Sessions Menu" /></p>
 
 <p>Click that option, and then enter your password. If the scripts that we created in this post are working correctly, your browser should launch to your catalog’s homepage.  You did it!</p>
+
+<hr />
 
 <h2 id="exiting-the-custom-session">Exiting the Custom Session</h2>
 
@@ -433,6 +453,8 @@ Type=Application
 <p>This command will force the <strong>kiosk-manager.sh</strong> script to stop. If you recall from our kiosk-session.sh script above, we told it to shut down the Xsession when the Kiosk Manager script is stopped. You should be returned to the Mint login page. To log back into your regular system, click the circle icon to the right of your username to open the desktop sessions menu, and then choose “Cinnamon” again.  Enter your password, and you’ll be logged back into the regular desktop, able to update your system or make any necessary changes.</p>
 
 <p>Your most recently selected desktop selection will be loaded upon startup, so once you are done making any changes, be sure to log out, select your “Kiosk Broswer” custom session, and enter your password to log in again. Now when you shut down your computer and reboot, it will boot into your custom catalog kiosk session.</p>
+
+<hr />
 
 <h2 id="conclusion">Conclusion</h2>
 

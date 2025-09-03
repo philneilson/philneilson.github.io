@@ -19,8 +19,8 @@
 <meta property="og:title" content="Library Catalog Kiosk Stations, Free with Linux (Part 3) - Install and Configure Utilities" />
 <meta name="author" content="Phil Neilson" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Now that you have a fresh installation of Linux Mint on your catalog computer kiosk station, you’re ready to configure the kiosk session to run in a browser automatically when the computer is booted. In this post, we’ll be going through the installation and setup of a browser and a few utilities that will help us meet the requirements for the kiosk station outlined in part 1." />
-<meta property="og:description" content="Now that you have a fresh installation of Linux Mint on your catalog computer kiosk station, you’re ready to configure the kiosk session to run in a browser automatically when the computer is booted. In this post, we’ll be going through the installation and setup of a browser and a few utilities that will help us meet the requirements for the kiosk station outlined in part 1." />
+<meta name="description" content="Posts in this Series: Library Catalog Kiosk Stations, Free with Linux (Part 1) Library Catalog Kiosk Stations, Free with Linux (Part 2) - Install the OS Library Catalog Kiosk Stations, Free with Linux (Part 3) - Install and Configure Utilities Library Catalog Kiosk Stations, Free with Linux (Part 4) - Create Kiosk Script &amp; Custom Session" />
+<meta property="og:description" content="Posts in this Series: Library Catalog Kiosk Stations, Free with Linux (Part 1) Library Catalog Kiosk Stations, Free with Linux (Part 2) - Install the OS Library Catalog Kiosk Stations, Free with Linux (Part 3) - Install and Configure Utilities Library Catalog Kiosk Stations, Free with Linux (Part 4) - Create Kiosk Script &amp; Custom Session" />
 <link rel="canonical" href="https://philneilson.online/libraries/linux/2025/08/25/linux-catalog-stations-part3.html" />
 <meta property="og:url" content="https://philneilson.online/libraries/linux/2025/08/25/linux-catalog-stations-part3.html" />
 <meta property="og:site_name" content="Phil Neilson" />
@@ -31,7 +31,7 @@
 <meta property="twitter:image" content="https://philneilson.online/assets/images/posts/utility.jpg" />
 <meta property="twitter:title" content="Library Catalog Kiosk Stations, Free with Linux (Part 3) - Install and Configure Utilities" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Phil Neilson"},"dateModified":"2025-08-25T00:00:00+00:00","datePublished":"2025-08-25T00:00:00+00:00","description":"Now that you have a fresh installation of Linux Mint on your catalog computer kiosk station, you’re ready to configure the kiosk session to run in a browser automatically when the computer is booted. In this post, we’ll be going through the installation and setup of a browser and a few utilities that will help us meet the requirements for the kiosk station outlined in part 1.","headline":"Library Catalog Kiosk Stations, Free with Linux (Part 3) - Install and Configure Utilities","image":"https://philneilson.online/assets/images/posts/utility.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"https://philneilson.online/libraries/linux/2025/08/25/linux-catalog-stations-part3.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://philneilson.online/assets/images/logo.avif"},"name":"Phil Neilson"},"url":"https://philneilson.online/libraries/linux/2025/08/25/linux-catalog-stations-part3.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Phil Neilson"},"dateModified":"2025-08-25T00:00:00+00:00","datePublished":"2025-08-25T00:00:00+00:00","description":"Posts in this Series: Library Catalog Kiosk Stations, Free with Linux (Part 1) Library Catalog Kiosk Stations, Free with Linux (Part 2) - Install the OS Library Catalog Kiosk Stations, Free with Linux (Part 3) - Install and Configure Utilities Library Catalog Kiosk Stations, Free with Linux (Part 4) - Create Kiosk Script &amp; Custom Session","headline":"Library Catalog Kiosk Stations, Free with Linux (Part 3) - Install and Configure Utilities","image":"https://philneilson.online/assets/images/posts/utility.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"https://philneilson.online/libraries/linux/2025/08/25/linux-catalog-stations-part3.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://philneilson.online/assets/images/logo.avif"},"name":"Phil Neilson"},"url":"https://philneilson.online/libraries/linux/2025/08/25/linux-catalog-stations-part3.html"}</script>
 <!-- End Jekyll SEO tag -->
 
     <link rel="icon" type="image/png" href="/assets/images/favicon.png">
@@ -252,9 +252,21 @@
     
 
     <div data-motion="fadeInUp" data-motion-onscroll="false" data-motion-delay="1" data-motion-duration="0.2" class="my-6">
-      <p>Now that you have a fresh installation of Linux Mint on your catalog computer kiosk station, you’re ready to configure the kiosk session to run in a browser automatically when the computer is booted. In this post, we’ll be going through the installation and setup of a browser and a few utilities that will help us meet the requirements for the kiosk station outlined in part 1.</p>
+      <h2 id="posts-in-this-series">Posts in this Series:</h2>
+<ul>
+  <li><strong><a href="https://philneilson.online/libraries/linux/2025/08/23/linux-catalog-stations-part1.html">Library Catalog Kiosk Stations, Free with Linux (Part 1)</a></strong></li>
+  <li><strong><a href="https://philneilson.online/libraries/linux/2025/08/24/linux-catalog-stations-part2.html">Library Catalog Kiosk Stations, Free with Linux (Part 2) - Install the OS</a></strong></li>
+  <li><strong><a href="https://philneilson.online/libraries/linux/2025/08/25/linux-catalog-stations-part3.html">Library Catalog Kiosk Stations, Free with Linux (Part 3) - Install and Configure Utilities</a></strong></li>
+  <li><strong><a href="https://philneilson.online/libraries/linux/2025/08/28/linux-catalog-stations-part4.html">Library Catalog Kiosk Stations, Free with Linux (Part 4) - Create Kiosk Script &amp; Custom Session</a></strong></li>
+</ul>
+
+<hr />
+
+<p>Now that you have a fresh installation of Linux Mint on your catalog computer kiosk station, you’re ready to configure the kiosk session to run in a browser automatically when the computer is booted. In this post, we’ll be going through the installation and setup of a browser and a few utilities that will help us meet the requirements for the kiosk station outlined in part 1.</p>
 
 <p>A note about these instructions. On Linux (as in most computing) there are two ways to get something done: with the command line in a terminal, or with the graphical interface. Some things are easier to do one way than the other. Experienced Linux users and adminsitrators tend to prefer the command line because often you can accomplish tasks with a terse command that would take lots of clicking through menus or folders if you went the graphical route.  As a Linux hobbyist who is very much still learning, I have found that there are some things that are easier for me to accomplish with the command line, and some things that just make more sense to me when I use the graphical interface.  So in these instructions, I am going to use a mix based on what felt more comfortable for me.</p>
+
+<hr />
 
 <h3 id="step-1-install-chromium-browser">Step 1: Install Chromium Browser</h3>
 
@@ -274,6 +286,8 @@
 <p><img src="/assets/images/posts/software-center.jpg" alt="image of Linux Mint software center" title="Linux Mint's Software Center" /></p>
 
 <p>Once the Software Manager opens, search for Chromium in the search bar.  Once you’ve found it, select it and click <strong>Install</strong>.  If you get an error message telling you that it isn’t able to install Chromium, open up a terminal and run the update command again, then reopen the Sotware Manager and try again.</p>
+
+<hr />
 
 <h3 id="step-2-install-additional-utilities">Step 2: Install Additional Utilities</h3>
 
@@ -299,6 +313,8 @@
 </ul>
 
 <p>A note about this and other commands you will run in the terminal later in this process: you may run into error messages.  When you are new to using the command line, an error message can feel like an insurmountable hurdle.  Even just parsing the error message can sometimes be tricky. I have learned that copying your command and its error output (<strong>ctrl</strong> + <strong>shift</strong> + <strong>C</strong>) and pasting it in a chat based AI service can work wonders. I’m not saying that AI is infallible or that you should blindly trust it, but I’ve found it to be remarkably good at explaining to me what the error is and what I can do to fix it (often, just running another command, or sometimes installing another program that the one you are installing depends on). The point is, don’t panic if you get an error message–it is probably solvable, and with a fairly few number of steps!</p>
+
+<hr />
 
 <h2 id="step-3-configure-squid">Step 3: Configure Squid</h2>
 
@@ -355,6 +371,8 @@ http_access deny all
 </code></pre></div></div>
 
 <p>Enter your password, and press “enter”. You should get a message telling you Squid started successfully.  Squid should now be configured with your custom URL whitelist.</p>
+
+<hr />
 
 <h2 id="step-4-configure-xbindkeys">Step 4: Configure xbindkeys</h2>
 
