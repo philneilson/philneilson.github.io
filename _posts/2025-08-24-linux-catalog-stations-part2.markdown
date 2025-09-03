@@ -7,6 +7,14 @@ categories: [libraries, Linux]
 image: /assets/images/posts/linux-mint.jpg
 ---
 
+## Posts in this Series:
+* **[Library Catalog Kiosk Stations, Free with Linux (Part 1)](https://philneilson.online/libraries/linux/2025/08/23/linux-catalog-stations-part1.html)**
+* **[Library Catalog Kiosk Stations, Free with Linux (Part 2) - Install the OS](https://philneilson.online/libraries/linux/2025/08/24/linux-catalog-stations-part2.html)**
+* **[Library Catalog Kiosk Stations, Free with Linux (Part 3) - Install and Configure Utilities](https://philneilson.online/libraries/linux/2025/08/25/linux-catalog-stations-part3.html)**
+* **[Library Catalog Kiosk Stations, Free with Linux (Part 4) - Create Kiosk Script & Custom Session](https://philneilson.online/libraries/linux/2025/08/28/linux-catalog-stations-part4.html)**
+
+---
+
 The first step toward building your kiosk station is to install a fresh OS on the machine, and this post will walk you through this step. If you already are familiar with installing Linux on a computer, skip to Part 3.
 
 I recommend and will be using **[Linux Mint 22.1 Cinnamon Edition](https://linuxmint.com/download.php)**. I like Mint because it's beginner-friendly (it has a fairly familiar visual setup if you are used to Windows), is not demanding on hardware (they say it will run on 2 GB of RAM but recommend 4 GB), and has good community support. If you're wondering "why Linux?" instead of just using Windows, here are a few reasons:
@@ -16,6 +24,8 @@ I recommend and will be using **[Linux Mint 22.1 Cinnamon Edition](https://linux
 * It's secure and less open to attack than a Windows system which comes running a bunch of unwanted/unknown services and applications out of the box.
 
 If you haven't ever tried out Linux, I would highly encourage you to do so, and Linux Mint is a great first distribution to work with.
+
+---
 
 ### Step 1: Download Linux Mint 22.1 Cinnamon Edition and create a bootable USB
 
@@ -37,6 +47,8 @@ Once your two downloads are complete, put your flash drive in the computer, navi
 * Click *Start* at the bottom. You'll be asked what mode you want to write your image in: select "Write in ISO image mode". You'll also get a warning that all your existing data will be erased. 
 * Once your USB is ready, the status bar will read READY and you can then click *Close*.
 
+---
+
 ### Step 2: Boot to USB
 
 Insert your newly-made USB flash drive into the computer that you're setting up to be a catalog station. The computer should be powered off. You will now boot your computer and tell it to load the operating system image that is on the USB flash drive, rather than the computer's hard drive. The process for doing this varies a bit from computer to computer and might take a couple of tries. 
@@ -50,6 +62,8 @@ If you don't see your USB device listed anywhere, it is probably due to your BIO
 Once you select your USB device in the boot menu and hit enter, it should load the Linux Mint GRUB menu. Hit enter to select the first option, **Start Linux Mint**.
 
 ![image of the Linux mint GRUB menu](/assets/images/posts/mint-boot.png "Linux Mint's GRUB menu")
+
+---
 
 ### Step 3: Install Linux Mint
 

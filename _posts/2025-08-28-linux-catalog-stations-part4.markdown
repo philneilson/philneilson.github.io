@@ -7,8 +7,17 @@ categories: [libraries, Linux]
 image: /assets/images/posts/bash.jpg
 ---
 
+## Posts in this Series:
+* **[Library Catalog Kiosk Stations, Free with Linux (Part 1)](https://philneilson.online/libraries/linux/2025/08/23/linux-catalog-stations-part1.html)**
+* **[Library Catalog Kiosk Stations, Free with Linux (Part 2) - Install the OS](https://philneilson.online/libraries/linux/2025/08/24/linux-catalog-stations-part2.html)**
+* **[Library Catalog Kiosk Stations, Free with Linux (Part 3) - Install and Configure Utilities](https://philneilson.online/libraries/linux/2025/08/25/linux-catalog-stations-part3.html)**
+* **[Library Catalog Kiosk Stations, Free with Linux (Part 4) - Create Kiosk Script & Custom Session](https://philneilson.online/libraries/linux/2025/08/28/linux-catalog-stations-part4.html)**
+
+---
+
 A shell script is a simple text file containing a list of commands that you'd normally type into your computer's command line (the terminal). Instead of typing them one by one, you can save them all in a single file and run the file to execute all the commands in order. "Bash" is the scripting language that is commonly used to give the commands in the terminal. In this post, we'll create a master **Kiosk Manager** shell script that will bring all of the programs and utilities that we installed in **[Part 3](https://philneilson.online/libraries/linux/2025/08/25/linux-catalog-stations-part3.html)** together. We will also create a custom desktop session optimized for our kiosk station.
 
+---
 
 ## Step 1: Create a Kiosk Manager Script
 
@@ -106,6 +115,8 @@ chmod +x kiosk-manager.sh
 
 You shouldn't get any reply back from the terminal if this operation is successful, but now you just gave permission for this file to be executed as a script.
 
+---
+
 ## Step 2: Create a Custom Xsession
 
 We are getting very close to having a working kiosk station! The last thing that we will do is create a custom Xsession that will load only the Chromium browser upon login, rather than loading and running the Cinnamon desktop in the background.
@@ -164,6 +175,8 @@ Again, note that in the line beginning with **EXEC=**, if your user is different
 
 Your custom Xsession should now be all set up.
 
+---
+
 ## Step 3: Set Power Button to Shut Down Computer
 
 One final step before testing your work. If your library procedures are like mine, library staff shut down the computers at the end of the day. It is very useful for staff to be able to press one button to boot the computer, and also one button to shut it down.
@@ -176,6 +189,8 @@ Now we need to tell the computer to shut down automatically when the power butto
 
 Depending on your system, you may also want to set some of the other options such as "Turn off the screen when inactive for" to **Never**, so that your catalog kiosk station doesn't go to sleep or turn off its display.
 
+---
+
 ## Step 4: Test It Out
 
 Now, log out by clicking the main menu icon in the lower left, then clicking the "logout" button (it is the button right above the red "shutdown" button and looks like the shutdown button turned on its side).
@@ -185,6 +200,8 @@ This will take you back to the user login screen. You should see the user that y
 ![image of Mint's desktop session menu](/assets/images/posts/desktop-session.jpg "Mint's Desktop Sessions Menu")
 
 Click that option, and then enter your password. If the scripts that we created in this post are working correctly, your browser should launch to your catalog's homepage.  You did it!
+
+---
 
 ## Exiting the Custom Session
 
@@ -199,6 +216,8 @@ pkill -f kiosk-manager.sh
 This command will force the **kiosk-manager.sh** script to stop. If you recall from our kiosk-session.sh script above, we told it to shut down the Xsession when the Kiosk Manager script is stopped. You should be returned to the Mint login page. To log back into your regular system, click the circle icon to the right of your username to open the desktop sessions menu, and then choose "Cinnamon" again.  Enter your password, and you'll be logged back into the regular desktop, able to update your system or make any necessary changes.
 
 Your most recently selected desktop selection will be loaded upon startup, so once you are done making any changes, be sure to log out, select your "Kiosk Broswer" custom session, and enter your password to log in again. Now when you shut down your computer and reboot, it will boot into your custom catalog kiosk session.
+
+---
 
 ## Conclusion
 

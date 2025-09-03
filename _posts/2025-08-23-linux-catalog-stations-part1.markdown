@@ -7,6 +7,14 @@ categories: [libraries, Linux]
 image: /assets/images/posts/catalog.jpg
 ---
 
+## Posts in this Series:
+* **[Library Catalog Kiosk Stations, Free with Linux (Part 1)](https://philneilson.online/libraries/linux/2025/08/23/linux-catalog-stations-part1.html)**
+* **[Library Catalog Kiosk Stations, Free with Linux (Part 2) - Install the OS](https://philneilson.online/libraries/linux/2025/08/24/linux-catalog-stations-part2.html)**
+* **[Library Catalog Kiosk Stations, Free with Linux (Part 3) - Install and Configure Utilities](https://philneilson.online/libraries/linux/2025/08/25/linux-catalog-stations-part3.html)**
+* **[Library Catalog Kiosk Stations, Free with Linux (Part 4) - Create Kiosk Script & Custom Session](https://philneilson.online/libraries/linux/2025/08/28/linux-catalog-stations-part4.html)**
+
+---
+
 In the library where I work, we recently had to find a new solution for our catalog computer stations. For the past few years, we had been running our catalog on computers with the excellent open-source, **Linux-based [Porteus Kiosk](https://porteus-kiosk.org/index.html)**.
 
 Prior to version 6.0.0, you could download Porteus, flash it to a USB, boot to the USB on your catalog computer and configure the settings you wanted, then install the image to the catalog computer's hard drive, all for free. There was an optional "automatic updates and support" option that you could pay for, but you could just not check that box and it would run for free. We had it running all our catalog stations.
@@ -15,7 +23,7 @@ With version 6.0.0 and forward, the "automatic updates and support" feature is m
 
 ---
 
-### The Free Alternative
+## The Free Alternative
 
 However, if you're like me and want to save yourself some red tape and/or stretch your budget a bit further, you can create a catalog kiosk station that functions very similarly to Porteus Kiosk, for free.
 
@@ -32,7 +40,7 @@ Here were the main requirements that I was after in my setup:
 
 ---
 
-### Getting Started
+## Getting Started
 
 I began this process with the very helpful tutorial video **[How to turn a LINUX MINT PC into a Web KIOSK](https://www.youtube.com/watch?v=XC0JonvTTOk)** and its **[Part 2](https://www.youtube.com/watch?v=Tp6QBJcXUIo)**, so thank you to TECHMIMIC for these excellent tutorials. However, after completing the instructions I still hadn't gotten some of the features I listed above (URL whitelist, the ability to navigate a bit or at least not get stuck, reset upon inactivity), so I kept going.  The rest of the instructions are pieced together from blog and forum posts (my usual way of learning Linux) and, eventually some AI help (not my usual way, but it was helpful).
 

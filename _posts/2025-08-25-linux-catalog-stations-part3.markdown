@@ -7,9 +7,19 @@ categories: [libraries, Linux]
 image: /assets/images/posts/utility.jpg
 ---
 
+## Posts in this Series:
+* **[Library Catalog Kiosk Stations, Free with Linux (Part 1)](https://philneilson.online/libraries/linux/2025/08/23/linux-catalog-stations-part1.html)**
+* **[Library Catalog Kiosk Stations, Free with Linux (Part 2) - Install the OS](https://philneilson.online/libraries/linux/2025/08/24/linux-catalog-stations-part2.html)**
+* **[Library Catalog Kiosk Stations, Free with Linux (Part 3) - Install and Configure Utilities](https://philneilson.online/libraries/linux/2025/08/25/linux-catalog-stations-part3.html)**
+* **[Library Catalog Kiosk Stations, Free with Linux (Part 4) - Create Kiosk Script & Custom Session](https://philneilson.online/libraries/linux/2025/08/28/linux-catalog-stations-part4.html)**
+
+---
+
 Now that you have a fresh installation of Linux Mint on your catalog computer kiosk station, you're ready to configure the kiosk session to run in a browser automatically when the computer is booted. In this post, we'll be going through the installation and setup of a browser and a few utilities that will help us meet the requirements for the kiosk station outlined in part 1.
 
 A note about these instructions. On Linux (as in most computing) there are two ways to get something done: with the command line in a terminal, or with the graphical interface. Some things are easier to do one way than the other. Experienced Linux users and adminsitrators tend to prefer the command line because often you can accomplish tasks with a terse command that would take lots of clicking through menus or folders if you went the graphical route.  As a Linux hobbyist who is very much still learning, I have found that there are some things that are easier for me to accomplish with the command line, and some things that just make more sense to me when I use the graphical interface.  So in these instructions, I am going to use a mix based on what felt more comfortable for me.
+
+---
 
 ### Step 1: Install Chromium Browser
 
@@ -30,6 +40,8 @@ Once the update is complete you can proceed with installing Chromium.  For this 
 ![image of Linux Mint software center](/assets/images/posts/software-center.jpg "Linux Mint's Software Center")
 
 Once the Software Manager opens, search for Chromium in the search bar.  Once you've found it, select it and click **Install**.  If you get an error message telling you that it isn't able to install Chromium, open up a terminal and run the update command again, then reopen the Sotware Manager and try again.
+
+---
 
 ### Step 2: Install Additional Utilities
 
@@ -55,6 +67,8 @@ This command will install the following programs:
 * **xbindkeys** is a tool that allows you to define custom keyboard commands.  We will be using this tool to create a "start over" button for the user so that they can get back to the start of the catalog even without the browser's navigation bar.
 
 A note about this and other commands you will run in the terminal later in this process: you may run into error messages.  When you are new to using the command line, an error message can feel like an insurmountable hurdle.  Even just parsing the error message can sometimes be tricky. I have learned that copying your command and its error output (**ctrl** + **shift** + **C**) and pasting it in a chat based AI service can work wonders. I'm not saying that AI is infallible or that you should blindly trust it, but I've found it to be remarkably good at explaining to me what the error is and what I can do to fix it (often, just running another command, or sometimes installing another program that the one you are installing depends on). The point is, don't panic if you get an error message--it is probably solvable, and with a fairly few number of steps!
+
+---
 
 ## Step 3: Configure Squid
 
@@ -115,6 +129,8 @@ sudo systemctl enable --now squid
 ```
 
 Enter your password, and press "enter". You should get a message telling you Squid started successfully.  Squid should now be configured with your custom URL whitelist.
+
+---
 
 ## Step 4: Configure xbindkeys
 
