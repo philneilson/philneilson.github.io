@@ -1,6 +1,202 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://philneilson.online/feed.xml" rel="self" type="application/atom+xml" /><link href="https://philneilson.online/" rel="alternate" type="text/html" /><updated>2025-08-28T16:42:07+00:00</updated><id>https://philneilson.online/feed.xml</id><title type="html">Phil Neilson</title><subtitle>A children &amp; youth librarian&apos;s journey into librarianship, tech, and web development.</subtitle><entry><title type="html">Library Catalog Kiosk Stations, Free with Linux (Part 4) - Create Kiosk Script &amp;amp; Set Up Custom Session</title><link href="https://philneilson.online/libraries/linux/2025/08/28/linux-catalog-stations-part4.html" rel="alternate" type="text/html" title="Library Catalog Kiosk Stations, Free with Linux (Part 4) - Create Kiosk Script &amp;amp; Set Up Custom Session" /><published>2025-08-28T00:00:00+00:00</published><updated>2025-08-28T00:00:00+00:00</updated><id>https://philneilson.online/libraries/linux/2025/08/28/linux-catalog-stations-part4</id><content type="html" xml:base="https://philneilson.online/libraries/linux/2025/08/28/linux-catalog-stations-part4.html"><![CDATA[<p>So far in this series of posts, we have done a fresh installation of Linux Mint 22.1 (Part 2) and installed Chromium browser and supplementary utilities, as well as set up those utilities (Part 3).  In this post, we’ll create a master <strong>Kiosk Manager</strong> shell script that will bring all of those programs together.  We will also create a custom desktop session optimized for our kiosk station.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://philneilson.online/feed.xml" rel="self" type="application/atom+xml" /><link href="https://philneilson.online/" rel="alternate" type="text/html" /><updated>2025-09-03T22:11:47+00:00</updated><id>https://philneilson.online/feed.xml</id><title type="html">Phil Neilson</title><subtitle>A children &amp; youth librarian&apos;s journey into librarianship, tech, and web development.</subtitle><entry><title type="html">Library Catalog Kiosk Stations, Free with Linux (Part 4) - Create Kiosk Script &amp;amp; Set Up Custom Session</title><link href="https://philneilson.online/libraries/linux/2025/08/28/linux-catalog-stations-part4.html" rel="alternate" type="text/html" title="Library Catalog Kiosk Stations, Free with Linux (Part 4) - Create Kiosk Script &amp;amp; Set Up Custom Session" /><published>2025-08-28T00:00:00+00:00</published><updated>2025-08-28T00:00:00+00:00</updated><id>https://philneilson.online/libraries/linux/2025/08/28/linux-catalog-stations-part4</id><content type="html" xml:base="https://philneilson.online/libraries/linux/2025/08/28/linux-catalog-stations-part4.html"><![CDATA[<p>A shell script is a simple text file containing a list of commands that you’d normally type into your computer’s command line (the terminal). Instead of typing them one by one, you can save them all in a single file and run the file to execute all the commands in order. “Bash” is the scripting language that is commonly used to give the commands in the terminal. In this post, we’ll create a master <strong>Kiosk Manager</strong> shell script that will bring all of the programs and utilities that we installed in <strong><a href="https://philneilson.online/libraries/linux/2025/08/25/linux-catalog-stations-part3.html">Part 3</a></strong> together. We will also create a custom desktop session optimized for our kiosk station.</p>
 
-<h2 id="step-1-create-a-kiosk-manager-script">Step 1: Create a Kiosk Manager Script</h2>]]></content><author><name>Phil Neilson</name></author><category term="libraries" /><category term="Linux" /><summary type="html"><![CDATA[So far in this series of posts, we have done a fresh installation of Linux Mint 22.1 (Part 2) and installed Chromium browser and supplementary utilities, as well as set up those utilities (Part 3). In this post, we’ll create a master Kiosk Manager shell script that will bring all of those programs together. We will also create a custom desktop session optimized for our kiosk station.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://philneilson.online/assets/images/posts/bash.jpg" /><media:content medium="image" url="https://philneilson.online/assets/images/posts/bash.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Library Catalog Kiosk Stations, Free with Linux (Part 3) - Install and Configure Utilities</title><link href="https://philneilson.online/libraries/linux/2025/08/25/linux-catalog-stations-part3.html" rel="alternate" type="text/html" title="Library Catalog Kiosk Stations, Free with Linux (Part 3) - Install and Configure Utilities" /><published>2025-08-25T00:00:00+00:00</published><updated>2025-08-25T00:00:00+00:00</updated><id>https://philneilson.online/libraries/linux/2025/08/25/linux-catalog-stations-part3</id><content type="html" xml:base="https://philneilson.online/libraries/linux/2025/08/25/linux-catalog-stations-part3.html"><![CDATA[<p>Now that you have a fresh installation of Linux Mint on your catalog computer kiosk station, you’re ready to configure the kiosk session to run in a browser automatically when the computer is booted. In this post, we’ll be going through the installation and setup of a browser and a few utilities that will help us meet the requirements for the kiosk station outlined in part 1.</p>
+<h2 id="step-1-create-a-kiosk-manager-script">Step 1: Create a Kiosk Manager Script</h2>
+
+<p>First, we will create a set of instructions that will open the Chromium browser, connect <em>via our Squid proxy server</em> to our library catalog’s homepage, listen for keystrokes so that if someone hits the “start over” button (F11) it will return to the homebage, and monitor the session for inactivity and restart back to the homepage if the session is inactive.  One other feature that this script will accomplish is that if someone closes the Chromium window (for example, through a key command such as <strong>ctrl</strong> + <strong>w</strong>), it will simply restart Chromium back at the homepage again.</p>
+
+<p>Open a terminal window with <strong>ctrl</strong> + <strong>alt</strong> + <strong>T</strong>, then enter the following command to create a new text file in your home directory:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xed kiosk-manager.sh
+</code></pre></div></div>
+
+<p>This command will create a new text file named <strong>kiosk-manager.sh</strong> and open it in the xed text editor.  You do not need sudo privileges for this file, because you are creating it in your home directory, rather than a systemwide directory.  Once again, you’ll probably get a warning at the bottom of the screen saying that the file does not exist, but that is okay; it will exist once you save it.</p>
+
+<p>Now, copy and paste the following code into your new file:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#!/bin/bash
+
+# The URL to reset to
+HOMEPAGE="https://ofpl.tlcdelivers.com"
+
+# The inactivity timeout in seconds (30 seconds in this case)
+TIMEOUT=30
+
+# The name of the web browser executable
+BROWSER_EXEC="chromium"
+
+# Create a temporary directory for the kiosk user profile
+KIOSK_PROFILE_DIR="/tmp/kiosk-profile"
+mkdir -p "$KIOSK_PROFILE_DIR"
+
+# The full command to launch the browser in kiosk mode
+BROWSER_COMMAND="$BROWSER_EXEC --kiosk --no-sandbox --user-data-dir=$KIOSK_PROFILE_DIR $HOMEPAGE"
+
+# Function to reset the browser
+reset_browser() {
+    echo "Inactivity detected. Resetting browser..."
+    
+    # Kill all running instances of the browser
+    pkill -f "$BROWSER_EXEC"
+
+    # Wait a moment for it to close completely
+    sleep 2
+
+    # Restart the browser with the homepage URL
+    $BROWSER_COMMAND &amp;
+
+    # IMPORTANT: Reset the X server idle timer by simulating a mouse movement
+    xdotool mousemove 1 1
+}
+
+# Start xbindkeys in the background so it can listen for key presses
+xbindkeys &amp;
+
+# The main loop that monitors for inactivity and checks if the browser is running
+while true; do
+    # Check if the browser process is running
+    pgrep -f "$BROWSER_EXEC" &gt; /dev/null
+    
+    # If the browser is NOT running, restart it
+    if [ $? -ne 0 ]; then
+        echo "Browser process is not running. Restarting..."
+        $BROWSER_COMMAND &amp;
+    fi
+
+    # Get the time of the last user activity from the X server
+    LAST_ACTIVITY=$(xprintidle)
+
+    # Convert milliseconds to seconds
+    LAST_ACTIVITY_SECONDS=$((LAST_ACTIVITY / 1000))
+
+    # Check if inactivity exceeds the timeout
+    if (( LAST_ACTIVITY_SECONDS &gt; TIMEOUT )); then
+        reset_browser
+    fi
+
+    # Wait for 1 second before checking again to avoid high CPU usage
+    sleep 1
+done
+</code></pre></div></div>
+
+<p>Before you save and close, look at <strong>line 4</strong> of the code, <strong>HOMEPAGE=”https://ofpl.tlcdelivers.com”</strong>. Replace the URL that is in quotation marks with the URL for your own catalog homepage.</p>
+
+<p>Also check <strong>line 10</strong>, <strong>BROWSER_EXEC=”chromium”</strong>, and replace the command in quotation marks with your browser of choice, <em>if</em> you are using a browser other than Chromium.</p>
+
+<p>Lastly, check <strong>line 27</strong>, <strong>sleep 2</strong>. This command creates a gap between when the browser closes, either by someone hitting the home key <strong>F11</strong> or another key combination like <strong>ctrl</strong> + <strong>W</strong> or by timeout, and opening the browser back up again. It is intended to make sure the browser process is fully stopped before starting another one. However, that is very conservative and will mean that there is a noticeable black-screen pause for the user when the process resets. You can experiment with this, but I found you can make that value as low as <strong>0.5</strong> without problems, which is visually a much smoother reset transition.</p>
+
+<p>When you are happy with the code, save with <strong>ctrl</strong> + <strong>S</strong>, and then you can close the text editor.</p>
+
+<p>Lastly, we need to make this script you just created executable.  In the terminal, enter the following command:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>chmod +x kiosk-manager.sh
+</code></pre></div></div>
+
+<p>You shouldn’t get any reply back from the terminal if this operation is successful, but now you just gave permission for this file to be executed as a script.</p>
+
+<h2 id="step-2-create-a-custom-xsession">Step 2: Create a Custom Xsession</h2>
+
+<p>We are getting very close to having a working kiosk station! The last thing that we will do is create a custom Xsession that will load only the Chromium browser upon login, rather than loading and running the Cinnamon desktop in the background.</p>
+
+<p>To do this, we’ll create another script in our home directory.  Open a terminal with <strong>ctrl</strong> + <strong>alt</strong> + <strong>T</strong> and enter the following command:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xed kiosk-session.sh
+</code></pre></div></div>
+
+<p>Again, the text editor will open (don’t worry about the warning at the bottom!). Paste the following code in the document:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#!/bin/bash
+
+# Start the kiosk manager script
+/home/catadmin/kiosk-manager.sh
+
+# After the kiosk script is terminated, shut down the X session
+exit 0
+</code></pre></div></div>
+
+<p>Even though shell scripting might seem intimidating (especially looking at the first one we made), it’s pretty easy to see what’s going on in this one. It simply runs the <strong>Kiosk Manager</strong> script that we created in the last step, and then tells the session to end once that script is terminated.  All of the lines beginning with # are just comments explaining what the commands are doing.</p>
+
+<p>One thing to note.  When you installed Linux, if the user you created is something different from <strong>catadmin</strong>, you’ll need to alter the username in the file path /home/<strong>username</strong>/kioskmanager.sh.</p>
+
+<p>Save the file with <strong>ctrl</strong> + <strong>S</strong>, then exit the editor. Make this script executable, just like we did with our first script, with the following command:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>chmod +x kiosk-session.sh
+</code></pre></div></div>
+
+<p>Now we will create one more file in our xsessions folder that will define this custom session. To do this, we first need to navigate to our xessions directory.  In the terminal, enter the following command:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd /usr/share/xsessions
+</code></pre></div></div>
+
+<p>The “cd” command means “change directory”. It is the command-line equivalent of clicking into folders and subfolders in a graphical file explorer.  You should see the path of the location we navigated to (<em>/usr/share/xsessions</em>) appear in green in the terminal.  Now we can create our new xsession file.  Enter the following command:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo xed kiosk.desktop
+</code></pre></div></div>
+
+<p>This time, you’ll be asked for your password because you are using sudo. This is necessary because we’re creating this file in a systemwide directory. Type in your password and press enter, and the text editor will once again open (and once again, ignore the warning at the bottom).  Copy and paste in the following code:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[Desktop Entry]
+Name=Kiosk Browser
+Comment=Launches the web browser in full-screen kiosk mode
+Exec=/home/catadmin/kiosk-session.sh
+Type=Application
+</code></pre></div></div>
+
+<p>Again, note that in the line beginning with <strong>EXEC=</strong>, if your user is different than <strong>catadmin</strong>, you’ll have to change it to your username. Save with <strong>ctrl</strong> + <strong>S</strong> and exit the text editor.</p>
+
+<p>Your custom Xsession should now be all set up.</p>
+
+<h2 id="step-3-set-power-button-to-shut-down-computer">Step 3: Set Power Button to Shut Down Computer</h2>
+
+<p>One final step before testing your work. If your library procedures are like mine, library staff shut down the computers at the end of the day. It is very useful for staff to be able to press one button to boot the computer, and also one button to shut it down.</p>
+
+<p>We have already set our user account to log in automatically during the Linux Mint installation process. However, if you didn’t you’ll need to set that by clicking the main menu icon, typing “Login window”, opening the Login Window dialog box and choosing “Users”, and then in the automatic login field, entering your computer’s username.</p>
+
+<p>Now we need to tell the computer to shut down automatically when the power button is pressed.  To do this, click on the main menu icon, type “Power Manager”, and open the Power manager dialog box.  From there, look for the option <strong>When the power button is pressed</strong> and in the dropdown menu change it from “Ask” to “Shut Down Immediately”.</p>
+
+<p><img src="/assets/images/posts/power-manager.jpg" alt="image of Mint's power manager" title="Mint's Power Manager" /></p>
+
+<p>Depending on your system, you may also want to set some of the other options such as “Turn off the screen when inactive for” to <strong>Never</strong>, so that your catalog kiosk station doesn’t go to sleep or turn off its display.</p>
+
+<h2 id="step-4-test-it-out">Step 4: Test It Out</h2>
+
+<p>Now, log out by clicking the main menu icon in the lower left, then clicking the “logout” button (it is the button right above the red “shutdown” button and looks like the shutdown button turned on its side).</p>
+
+<p>This will take you back to the user login screen. You should see the user that you created when you installed Linux Mint, and to the right of it, you should see a small round icon that looks like a circle with a mountain in it.  If you click on that icon, you should see a few options, but one of the options should be the custom session that we created in the last step.  It will be called “Kiosk Browser”, and it will have a solid circle beside it.</p>
+
+<p><img src="/assets/images/posts/desktop-session.jpg" alt="image of Mint's desktop session menu" title="Mint's Desktop Sessions Menu" /></p>
+
+<p>Click that option, and then enter your password. If the scripts that we created in this post are working correctly, your browser should launch to your catalog’s homepage.  You did it!</p>
+
+<h2 id="exiting-the-custom-session">Exiting the Custom Session</h2>
+
+<p>Now that you’re in your locked-down custom session, there is no apparent way to get out of it! If everything is working correctly, anything you might try to do to close the browser will just result in it resetting back to the homepage. Even shutting the computer down and rebooting it should automatically boot right into this xsession if you have set the automatic login correctly. This is great, beacuse it means you have a locked down session. But how can you make any needed changes or run updates?</p>
+
+<p>To make changes to your catalog kiosk station, you can open a virtual console (also called TTY or teletype) by pressing <strong>ctrl</strong> + <strong>alt</strong> + <strong>F1</strong>.  When you do this, you will be prompted for your username; type it and press “enter”. Next you’ll be prompted for your password; type it and press “enter”.  Now, you’ll be logged into your user account within this virtual console and should be able to give the system commands.  To end this Xsession, enter the following command:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pkill -f kiosk-manager.sh
+</code></pre></div></div>
+
+<p>This command will force the <strong>kiosk-manager.sh</strong> script to stop. If you recall from our kiosk-session.sh script above, we told it to shut down the Xsession when the Kiosk Manager script is stopped. You should be returned to the Mint login page. To log back into your regular system, click the circle icon to the right of your username to open the desktop sessions menu, and then choose “Cinnamon” again.  Enter your password, and you’ll be logged back into the regular desktop, able to update your system or make any necessary changes.</p>
+
+<p>Your most recently selected desktop selection will be loaded upon startup, so once you are done making any changes, be sure to log out, select your “Kiosk Broswer” custom session, and enter your password to log in again. Now when you shut down your computer and reboot, it will boot into your custom catalog kiosk session.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>In this series of posts, we have:</p>
+
+<ul>
+  <li>Downloaded a Linux Mint ISO</li>
+  <li>Written it to a bootable USB</li>
+  <li>Installed Linux Mint</li>
+  <li>Installed Chromium</li>
+  <li>Installed and configured a bunch of supporting utilities</li>
+  <li>Created a custom kiosk manager script</li>
+  <li>Created a custom Xsession that loads just the browser</li>
+</ul>
+
+<p>In doing so, we have created a <strong>free</strong>, reliable, locked-down kiosk station that can be powered on in the morning with a single button push, used by patrons throughout the day to access your library’s catalog, and shutdown in the evening with a single button push.</p>
+
+<p>If you are a librarian who has been following along with these instructions, I hope that you’ve enjoyed this learning process and are interested in exploring Linux further.</p>]]></content><author><name>Phil Neilson</name></author><category term="libraries" /><category term="Linux" /><summary type="html"><![CDATA[A shell script is a simple text file containing a list of commands that you’d normally type into your computer’s command line (the terminal). Instead of typing them one by one, you can save them all in a single file and run the file to execute all the commands in order. “Bash” is the scripting language that is commonly used to give the commands in the terminal. In this post, we’ll create a master Kiosk Manager shell script that will bring all of the programs and utilities that we installed in Part 3 together. We will also create a custom desktop session optimized for our kiosk station.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://philneilson.online/assets/images/posts/bash.jpg" /><media:content medium="image" url="https://philneilson.online/assets/images/posts/bash.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Library Catalog Kiosk Stations, Free with Linux (Part 3) - Install and Configure Utilities</title><link href="https://philneilson.online/libraries/linux/2025/08/25/linux-catalog-stations-part3.html" rel="alternate" type="text/html" title="Library Catalog Kiosk Stations, Free with Linux (Part 3) - Install and Configure Utilities" /><published>2025-08-25T00:00:00+00:00</published><updated>2025-08-25T00:00:00+00:00</updated><id>https://philneilson.online/libraries/linux/2025/08/25/linux-catalog-stations-part3</id><content type="html" xml:base="https://philneilson.online/libraries/linux/2025/08/25/linux-catalog-stations-part3.html"><![CDATA[<p>Now that you have a fresh installation of Linux Mint on your catalog computer kiosk station, you’re ready to configure the kiosk session to run in a browser automatically when the computer is booted. In this post, we’ll be going through the installation and setup of a browser and a few utilities that will help us meet the requirements for the kiosk station outlined in part 1.</p>
 
 <p>A note about these instructions. On Linux (as in most computing) there are two ways to get something done: with the command line in a terminal, or with the graphical interface. Some things are easier to do one way than the other. Experienced Linux users and adminsitrators tend to prefer the command line because often you can accomplish tasks with a terse command that would take lots of clicking through menus or folders if you went the graphical route.  As a Linux hobbyist who is very much still learning, I have found that there are some things that are easier for me to accomplish with the command line, and some things that just make more sense to me when I use the graphical interface.  So in these instructions, I am going to use a mix based on what felt more comfortable for me.</p>
 
