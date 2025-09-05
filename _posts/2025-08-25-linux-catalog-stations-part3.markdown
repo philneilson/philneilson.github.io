@@ -3,7 +3,7 @@ layout: post
 title:  Library Catalog Kiosk Stations, Free with Linux (Part 3) - Install and Configure Utilities
 date:   2025-08-25
 author: Phil Neilson
-categories: [libraries, Linux]
+categories: [Linux]
 image: /assets/images/posts/utility.jpg
 ---
 

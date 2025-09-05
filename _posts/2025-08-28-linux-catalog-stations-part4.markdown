@@ -3,7 +3,7 @@ layout: post
 title:  Library Catalog Kiosk Stations, Free with Linux (Part 4) - Create Kiosk Script & Set Up Custom Session
 date:   2025-08-28
 author: Phil Neilson
-categories: [libraries, Linux]
+categories: [Linux]
 image: /assets/images/posts/bash.jpg
 ---
 
@@ -233,4 +233,4 @@ In this series of posts, we have:
 
 In doing so, we have created a **free**, reliable, locked-down kiosk station that can be powered on in the morning with a single button push, used by patrons throughout the day to access your library's catalog, and shutdown in the evening with a single button push.
 
-If you are a librarian who has been following along with these instructions, I hope that you've enjoyed this learning process and are interested in exploring Linux further.
+If you are a librarian who has been following along with these instructions, I hope that you've enjoyed this learning process and are interested in exploring Linux further. If you are trying to use these instructions to implement a catalog kiosk station in your library and run into issues, feel free to reach out to me!

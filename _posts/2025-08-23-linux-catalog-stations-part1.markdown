@@ -3,7 +3,7 @@ layout: post
 title:  Library Catalog Kiosk Stations, Free with Linux (Part 1)
 date:   2025-08-23
 author: Phil Neilson
-categories: [libraries, Linux]
+categories: [Linux]
 image: /assets/images/posts/catalog.jpg
 ---
 
