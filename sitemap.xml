@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>https://philneilson.online/libraries/linux/2025/08/23/linux-catalog-stations-part1.html</loc>
+<loc>https://philneilson.online/linux/2025/08/23/linux-catalog-stations-part1.html</loc>
 <lastmod>2025-08-23T00:00:00+00:00</lastmod>
 </url>
 <url>
-<loc>https://philneilson.online/libraries/linux/2025/08/24/linux-catalog-stations-part2.html</loc>
+<loc>https://philneilson.online/linux/2025/08/24/linux-catalog-stations-part2.html</loc>
 <lastmod>2025-08-24T00:00:00+00:00</lastmod>
 </url>
 <url>
-<loc>https://philneilson.online/libraries/linux/2025/08/25/linux-catalog-stations-part3.html</loc>
+<loc>https://philneilson.online/linux/2025/08/25/linux-catalog-stations-part3.html</loc>
 <lastmod>2025-08-25T00:00:00+00:00</lastmod>
 </url>
 <url>
-<loc>https://philneilson.online/libraries/linux/2025/08/28/linux-catalog-stations-part4.html</loc>
+<loc>https://philneilson.online/linux/2025/08/28/linux-catalog-stations-part4.html</loc>
 <lastmod>2025-08-28T00:00:00+00:00</lastmod>
+</url>
+<url>
+<loc>https://philneilson.online/makerspace/2025/09/03/laser-engraved-acrylic-necklaces.html</loc>
+<lastmod>2025-09-03T00:00:00+00:00</lastmod>
 </url>
 <url>
 <loc>https://philneilson.online/projects/2025-08-22-gallup-childrens-museum-website/</loc>
@@ -33,13 +37,13 @@
 <loc>https://philneilson.online/projects/</loc>
 </url>
 <url>
-<loc>https://philneilson.online/category/libraries/</loc>
-</url>
-<url>
 <loc>https://philneilson.online/category/linux/</loc>
 </url>
 <url>
+<loc>https://philneilson.online/category/makerspace/</loc>
+</url>
+<url>
 <loc>https://philneilson.online/assets/docs/Philip-Neilson-Resume-2025.pdf</loc>
-<lastmod>2025-09-03T22:20:21+00:00</lastmod>
+<lastmod>2025-09-05T20:07:21+00:00</lastmod>
 </url>
 </urlset>
