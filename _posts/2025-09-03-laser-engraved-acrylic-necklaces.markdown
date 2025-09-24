@@ -54,6 +54,39 @@ As pairs finished their designs, they made their way over to MakerSpace where I 
 
 If you haven't ever used Inkscape before, I can't recommend it highly enough for a huge range of Makerspace applications.  It's a free, open-source vector editor, and it is very powerful. I only know a handful of the many things you can do with it. The "trace bitmap" feature alone makes it incredibly useful for all manner of cutting projects where you need path-based images.
 
-Most applications that come with a piece of cutting equipment (such as a Cricut cutter or our Xtool laser engraver) have built-in editors that allow you to do quite a lot, so it may seem a bit counterintuitive to add Inkscape into the mix when we could achieve the same thing without it.  My argument for using Inkscape in these cases is:
+Most applications that come with a piece of cutting equipment (such as a Cricut cutter or our Xtool laser engraver) have built-in editors that allow you to do quite a lot, so it may seem a bit counterintuitive to add Inkscape into the mix when we could achieve the same thing without it.  My argument for learning Inkscape is:
 * 1) You have total control over your image; you won't run into something you can't achieve due to the limitations of the built-in editing features in the proprietary editor; and 
 * 2) You can spend a lot of time learning the different interfaces of Cricut Design Space, Xtool Creative Space, and all the other programs that come with your equipment, or you can learn Inkscape and use it for everything.
+
+Here is the process I followed in Inkscape.
+
+**1. Trace Bitmap**
+Open the downloaded PNG image (File > Open), and once it is loaded click on it to select it. Now open the Trace Bitmap tool (Path > Trace Bitmap) and adjust the threshold until it is picking up all of your design, then click "Apply". Open the Layers and Objects menu (Layers > Objects and Layers) and you should see both your original image and the new path that was created by the bitmap trace. Click on the eye icon to hide the original image layer. Lastly, export your new path (File > Export > in the panel choose "Selection" at the top > change the file type to "Plain SVG" > give your SVG a name > Export).
+
+![Using the Trace Bitmap tool in Inkscape](/assets/images/posts/inkscape-trace-bitmap.gif "Using the Trace Bitmap tool in Inkscape")
+
+**2. Break Paths**
+
+We have just created the image that will be engraved onto the surface of the necklace, but now we also need to create a path for the engraver to cut out the necklace's shape. To do this, we first need to isolate the outer edge of our current path. Ensuring that your path is still selected, break apart its components (Path > Break Apart). You'll now see a whole bunch of paths listed in your Objects and Layers menu, but the top path listed should be the outline. Holding down the "Shift" key, select the second path and then scroll all the way down to the bottom of the list and select the bottom path, then right-click and choose "Delete". Now your path is just the outline of your shape.
+
+![Using the Break Paths tool in Inkscape](/assets/images/posts/inkscape-break-paths.gif "Using the Break Paths tool in Inkscape")
+
+**3. Dynamic Offset**
+
+It's a good idea to have your outer cut path be a bit bigger than the image that you are engraving. To add that extra bit of margin, use the Dynamic Offset tool. In the Objects and Layers panel, right click on your path and choose "Duplicate", then click on the new path that was created (the bottom one). Give that bottom path a new color by choosing a color from the menu at the bottom; you won't see the shape change color yet, but it will help you be able to see your offset. 
+
+Next, choose the Dynamic Offset tool (Path > Dynamic Offset). You should see a little diamond shape appear at the top of your path--if you don't see it, double check to make sure that you have the node tool selected in the left tool menu. Click and hold on the diamond shape and slowly drag upwards and you should see your bottom (new colored) shape enlarging. Once you have your new offset path the size that you want it, go back to the Objects and Layers menu and delete the old (top) path. Lastly, making sure your new Dynamic Offset object is selected, turn it back into a path (Path > Object to Path).
+
+![Using the Dynamic Offset tool in Inkscape](/assets/images/posts/inkscape-dynamic-offset.gif "Using the Dynamic Offset tool in Inkscape")
+
+**4. Adding Holes and Combining Paths**
+
+The last thing I wanted for this project was some holes for the jump rings. To add these, create a new circle shape from the tool menu on the left side (if desired, make the fill of your circle transparent using the fill/stroke menu at the bottom). Then copy-paste the circle shape and place the circles according to where they would be needed in the design. Last, in the Objects and Layers menu, hold down "ctrl" and select all of the paths (make sure you avoid the original image layer) of your outer shape and the circles, and then combine these paths into one path (Path > Combine). Lastly, export your cut path (File > Export > in the panel choose "Selection" at the top > change the file type to "Plain SVG" > give your SVG a name > Export).
+
+*Note:* I still haven't created the cut paths to cut the shape into the four pieces that it will eventually be in. We could definitely achieve this in Inkscape, but for the sake of this project, I found it easier to add the straight line cut paths in the Xtool Creative Space.
+
+![Creating circles and combining paths in Inkscape](/assets/images/posts/inkscape-combine-paths.gif "Creating circles and combining paths in Inkscape")
+
+---
+
+## Step 3 - Engraving and Cutting
